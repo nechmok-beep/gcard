@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gray Cardinal — Контент-план 9–15 марта</title>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700&family=Golos+Text:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#141414; --frame:#1f1f1f; --frame2:#252525;
+  --border:#2a2a2a; --border2:#363636;
+  --katya:#a82035; --katya2:#c42a43; --katya-bg:rgba(168,32,53,.15);
+  --erik:#1e3f72;  --erik2:#2a5499;  --erik-bg:rgba(30,63,114,.18);
+  --alex:#464646;  --alex2:#5a5a5a;
+  --gold:#c09a4a; --gold2:#e0be78;
+  --green:#2a6645; --green2:#3d9963;
+  --text:#e2ddd8; --text2:#9a9088; --text3:#5a5248; --white:#f5f2ee;
+  --s-idea-bg:rgba(90,63,138,.22);   --s-idea-b:rgba(124,91,181,.4);   --s-idea-t:#c4a8f0;
+  --s-ready-bg:rgba(192,154,74,.18); --s-ready-b:rgba(192,154,74,.4);  --s-ready-t:var(--gold2);
+  --s-prod-bg:rgba(30,63,114,.22);   --s-prod-b:rgba(42,84,153,.45);   --s-prod-t:#88b2de;
+  --s-done-bg:rgba(42,102,69,.2);    --s-done-b:rgba(42,102,69,.45);   --s-done-t:#7ad4a4;
+  --s-pub-bg:rgba(168,32,53,.18);    --s-pub-b:rgba(196,42,67,.4);     --s-pub-t:#e8909a;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);font-family:'Golos Text',sans-serif;color:var(--text);min-height:100vh}
+
+/* TOPBAR */
+.topbar{position:sticky;top:0;z-index:100;background:rgba(14,14,14,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:0 24px;height:50px;display:flex;align-items:center;justify-content:space-between}
+.tb-left{display:flex;align-items:center;gap:14px}
+.tb-logo{font-family:'Unbounded',sans-serif;font-size:11px;font-weight:700;color:var(--white);letter-spacing:.1em}
+.tb-logo span{color:var(--gold2)}
+.tb-sep{width:1px;height:18px;background:var(--border2)}
+.tb-title{font-size:11px;color:var(--text3);letter-spacing:.06em}
+.tb-right{display:flex;gap:8px;align-items:center}
+.plat{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:3px}
+.plat-vk {background:rgba(0,119,255,.15);color:#6da8ff;border:1px solid rgba(0,119,255,.28)}
+.plat-tg {background:rgba(36,161,222,.12);color:#7fd8f8;border:1px solid rgba(36,161,222,.22)}
+.plat-ig {background:rgba(192,74,120,.12);color:#f0a0c0;border:1px solid rgba(192,74,120,.22)}
+.plat-pin{background:rgba(189,8,28,.1);color:#ff8090;border:1px solid rgba(189,8,28,.2)}
+
+/* WEEK HEADER */
+.week-hero{background:var(--frame);border-bottom:1px solid var(--border);padding:18px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.wh-left{}
+.wh-label{font-size:9px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:5px}
+.wh-title{font-family:'Unbounded',sans-serif;font-size:20px;font-weight:700;color:var(--white)}
+.wh-sub{font-size:11px;color:var(--text3);margin-top:4px}
+.wh-stats{display:flex;gap:10px;flex-wrap:wrap}
+.ws{background:rgba(0,0,0,.25);border:1px solid var(--border);border-radius:6px;padding:8px 14px;text-align:center}
+.ws-val{font-family:'Unbounded',sans-serif;font-size:18px;font-weight:700;color:var(--white)}
+.ws-lbl{font-size:9px;color:var(--text3);margin-top:2px;letter-spacing:.04em}
+
+/* STATUS LEGEND */
+.status-bar{padding:10px 24px;display:flex;align-items:center;gap:16px;border-bottom:1px solid var(--border);background:rgba(0,0,0,.1);flex-wrap:wrap}
+.sb-label{font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--text3)}
+.sl{display:flex;align-items:center;gap:5px;font-size:10px;color:var(--text2)}
+.sl-dot{width:7px;height:7px;border-radius:2px}
+
+/* WRAPPER */
+.wrap{padding:16px 24px 60px;overflow-x:auto}
+
+/* DAY SECTIONS */
+.day-block{margin-bottom:24px;animation:fu .4s ease both}
+@keyframes fu{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.day-block:nth-child(1){animation-delay:.04s}.day-block:nth-child(2){animation-delay:.1s}
+.day-block:nth-child(3){animation-delay:.16s}.day-block:nth-child(4){animation-delay:.22s}
+.day-block:nth-child(5){animation-delay:.28s}.day-block:nth-child(6){animation-delay:.34s}
+.day-block:nth-child(7){animation-delay:.40s}
+
+.day-head{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.day-circle{width:46px;height:46px;border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0;border:1px solid var(--border2)}
+.day-circle.weekend{border-color:rgba(192,154,74,.3);background:rgba(192,154,74,.06)}
+.day-circle.weekday{border-color:var(--border2);background:rgba(255,255,255,.03)}
+.day-num{font-family:'Unbounded',sans-serif;font-size:16px;font-weight:700;color:var(--white);line-height:1}
+.day-name{font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-top:2px}
+.day-info{}
+.day-title{font-family:'Unbounded',sans-serif;font-size:13px;font-weight:600;color:var(--white)}
+.day-meta{font-size:10.5px;color:var(--text3);margin-top:2px}
+.day-sep-line{flex:1;height:1px;background:var(--border)}
+.day-count{font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text3);background:var(--frame2);border:1px solid var(--border);border-radius:4px;padding:3px 9px;white-space:nowrap}
+
+/* POST CARDS */
+.posts{display:flex;flex-direction:column;gap:8px}
+
+.post-card{background:var(--frame);border:1px solid var(--border);border-radius:10px;overflow:hidden;transition:box-shadow .15s}
+.post-card:hover{box-shadow:0 6px 20px rgba(0,0,0,.32)}
+
+.post-top{display:grid;grid-template-columns:1fr auto;gap:12px;padding:13px 16px 11px;border-bottom:1px solid var(--border)}
+.post-top-left{}
+.post-meta-row{display:flex;align-items:center;gap:6px;margin-bottom:6px;flex-wrap:wrap}
+.post-num{font-family:'Unbounded',sans-serif;font-size:9px;font-weight:700;color:var(--text3)}
+.rubric{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 8px;border-radius:3px}
+.rub-lifestyle{background:rgba(192,154,74,.15);color:var(--gold2);border:1px solid rgba(192,154,74,.25)}
+.rub-product  {background:rgba(42,102,69,.18);color:#7ad4a4;border:1px solid rgba(42,102,69,.3)}
+.rub-promo    {background:rgba(168,32,53,.18);color:#e8909a;border:1px solid rgba(168,32,53,.3)}
+.rub-ugc      {background:rgba(90,63,138,.18);color:#c4a8f0;border:1px solid rgba(90,63,138,.3)}
+.rub-edu      {background:rgba(30,63,114,.18);color:#88b2de;border:1px solid rgba(30,63,114,.3)}
+.rub-bts      {background:rgba(80,60,20,.25);color:#d4a860;border:1px solid rgba(140,100,30,.3)}
+.rub-news     {background:rgba(50,50,50,.3);color:#c0c0c0;border:1px solid rgba(80,80,80,.3)}
+.rub-engage   {background:rgba(36,120,80,.18);color:#80dfa8;border:1px solid rgba(36,120,80,.3)}
+
+.post-title{font-size:14px;font-weight:600;color:var(--white);line-height:1.35;margin-bottom:4px}
+.post-desc{font-size:12px;color:var(--text2);line-height:1.5}
+
+.post-right{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+.status{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:600;padding:4px 10px;border-radius:4px;white-space:nowrap}
+.status .s-dot{width:6px;height:6px;border-radius:50%;background:currentColor}
+.st-idea {background:var(--s-idea-bg);border:1px solid var(--s-idea-b);color:var(--s-idea-t)}
+.st-ready{background:var(--s-ready-bg);border:1px solid var(--s-ready-b);color:var(--s-ready-t)}
+.st-prod {background:var(--s-prod-bg);border:1px solid var(--s-prod-b);color:var(--s-prod-t)}
+.st-done {background:var(--s-done-bg);border:1px solid var(--s-done-b);color:var(--s-done-t)}
+.st-pub  {background:var(--s-pub-bg);border:1px solid var(--s-pub-b);color:var(--s-pub-t)}
+
+.time-tag{font-size:10px;color:var(--text3);background:rgba(0,0,0,.25);border:1px solid var(--border);border-radius:4px;padding:3px 8px;white-space:nowrap}
+
+/* POST BODY */
+.post-body{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;border-top:1px solid var(--border)}
+.pb-cell{padding:11px 14px;border-right:1px solid var(--border)}
+.pb-cell:last-child{border-right:none}
+.pb-label{font-size:8.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--text3);margin-bottom:6px}
+.pb-val{font-size:12px;color:var(--text2);line-height:1.5}
+
+/* PLATFORM DOTS */
+.plats{display:flex;gap:4px;flex-wrap:wrap}
+.pd{font-size:9px;font-weight:700;padding:2px 7px;border-radius:3px}
+.pd-vk {background:rgba(0,119,255,.15);color:#6da8ff;border:1px solid rgba(0,119,255,.25)}
+.pd-tg {background:rgba(36,161,222,.12);color:#7fd8f8;border:1px solid rgba(36,161,222,.2)}
+.pd-ig {background:rgba(192,74,120,.12);color:#f0a0c0;border:1px solid rgba(192,74,120,.2)}
+.pd-pin{background:rgba(189,8,28,.1);color:#ff8090;border:1px solid rgba(189,8,28,.2)}
+
+/* WHO */
+.who-list{display:flex;flex-direction:column;gap:3px}
+.who{font-size:8px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:2px 7px;border-radius:3px;display:inline-block}
+.wk{background:var(--katya2);color:#fff}.we{background:var(--erik2);color:#fff}
+
+/* FORMAT TAG */
+.fmt{display:inline-flex;align-items:center;gap:5px;font-size:11px;color:var(--text2);background:rgba(255,255,255,.04);border:1px solid var(--border2);border-radius:4px;padding:3px 9px}
+.fmt i{font-size:13px;font-style:normal}
+
+/* ASSETS */
+.assets-row{display:flex;flex-direction:column;gap:4px}
+.asset-item{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--text2)}
+.asset-box{width:16px;height:16px;border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:9px;flex-shrink:0}
+.ab-ok  {background:rgba(42,102,69,.3);border:1px solid rgba(42,102,69,.5);color:#7ad4a4}
+.ab-no  {background:rgba(60,60,60,.25);border:1px solid rgba(80,80,80,.3);color:#666}
+.ab-wip {background:rgba(30,63,114,.25);border:1px solid rgba(42,84,153,.4);color:#88b2de}
+
+/* POST FOOTER (tasks) */
+.post-tasks{padding:10px 16px;background:rgba(0,0,0,.15);border-top:1px solid var(--border);display:flex;flex-direction:column;gap:5px}
+.task-item{display:flex;align-items:flex-start;gap:8px;font-size:11.5px;color:var(--text2);line-height:1.45}
+.task-box{width:14px;height:14px;border-radius:3px;border:1.5px solid rgba(192,154,74,.35);flex-shrink:0;margin-top:1px}
+.task-item strong{color:var(--text);font-weight:600}
+.task-item.done .task-box{background:rgba(42,102,69,.4);border-color:rgba(42,102,69,.6)}
+.task-item.done .task-box::after{content:'✓';display:flex;justify-content:center;align-items:center;width:100%;height:100%;font-size:8px;color:#7ad4a4}
+.task-item.done > span{color:var(--text3);text-decoration:line-through;text-decoration-color:rgba(90,80,72,.5)}
+
+/* NO POSTS */
+.no-post{padding:16px;background:rgba(0,0,0,.1);border:1px dashed var(--border2);border-radius:8px;text-align:center;font-size:11.5px;color:var(--text3);font-style:italic}
+
+/* FOOTER SUMMARY */
+.summary{margin-top:8px;background:var(--frame);border:1px solid var(--border);border-radius:10px;padding:16px 20px;display:flex;gap:28px;align-items:center;flex-wrap:wrap}
+.sum-block{display:flex;flex-direction:column;gap:3px}
+.sum-label{font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--text3)}
+.sum-val{font-family:'Unbounded',sans-serif;font-size:20px;font-weight:700;color:var(--white)}
+.sum-sub{font-size:10px;color:var(--text3)}
+.sum-divider{width:1px;height:40px;background:var(--border2)}
+.sum-row{display:flex;gap:12px;flex-wrap:wrap}
+.sr-item{display:flex;flex-direction:column;align-items:center;gap:2px;min-width:44px}
+.sr-val{font-size:15px;font-weight:700}
+.sr-lbl{font-size:9px;color:var(--text3)}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="tb-left">
+    <div class="tb-logo">Gray <span>Cardinal</span></div>
+    <div class="tb-sep"></div>
+    <div class="tb-title">Контент-план · 9–15 марта 2025</div>
+  </div>
+  <div class="tb-right">
+    <span class="plat plat-vk">ВКонтакте</span>
+    <span class="plat plat-tg">Telegram</span>
+    <span class="plat plat-ig">Instagram</span>
+    <span class="plat plat-pin">Pinterest</span>
+  </div>
+</div>
+
+<!-- WEEK HERO -->
+<div class="week-hero">
+  <div class="wh-left">
+    <div class="wh-label">Подробный план недели</div>
+    <div class="wh-title">9 — 15 марта 2025</div>
+    <div class="wh-sub">Постпраздничная неделя · упор на продукт и вовлечение · 13 публикаций</div>
+  </div>
+  <div class="wh-stats">
+    <div class="ws"><div class="ws-val">13</div><div class="ws-lbl">Публикаций</div></div>
+    <div class="ws"><div class="ws-val">4</div><div class="ws-lbl">Платформы</div></div>
+    <div class="ws"><div class="ws-val">7</div><div class="ws-lbl">Рубрик</div></div>
+    <div class="ws"><div class="ws-val">5</div><div class="ws-lbl">Форматов</div></div>
+  </div>
+</div>
+
+<!-- STATUS LEGEND -->
+<div class="status-bar">
+  <span class="sb-label">Статус:</span>
+  <div class="sl"><div class="sl-dot" style="background:var(--s-idea-t)"></div>Идея</div>
+  <div class="sl"><div class="sl-dot" style="background:var(--s-ready-t)"></div>ТЗ готово</div>
+  <div class="sl"><div class="sl-dot" style="background:var(--s-prod-t)"></div>В производстве</div>
+  <div class="sl"><div class="sl-dot" style="background:var(--s-done-t)"></div>Готово</div>
+  <div class="sl"><div class="sl-dot" style="background:var(--s-pub-t)"></div>Опубликовано</div>
+</div>
+
+<div class="wrap">
+
+  <!-- ══ ВОСКРЕСЕНЬЕ 9 ══ -->
+  <div class="day-block">
+    <div class="day-head">
+      <div class="day-circle weekend">
+        <div class="day-num">9</div>
+        <div class="day-name">вс</div>
+      </div>
+      <div class="day-info">
+        <div class="day-title">Воскресенье</div>
+        <div class="day-meta">Постпраздничный день · аудитория активна · органический охват выше</div>
+      </div>
+      <div class="day-sep-line"></div>
+      <div class="day-count">2 публикации</div>
+    </div>
+    <div class="posts">
+
+      <div class="post-card">
+        <div class="post-top">
+          <div class="post-top-left">
+            <div class="post-meta-row">
+              <span class="post-num">01</span>
+              <span class="rubric rub-lifestyle">Lifestyle</span>
+            </div>
+            <div class="post-title">Воскресный вечер на диване — самое правильное решение</div>
+            <div class="post-desc">Тёплая атмосферная фотография: плед, книга, диван. Лёгкий текст без продаж — настроение и близость к аудитории. Хэштеги: #серыйкардинал #уютдома</div>
+          </div>
+          <div class="post-right">
+            <span class="status st-ready"><span class="s-dot"></span>ТЗ готово</span>
+            <span class="time-tag">⏰ 12:00</span>
+          </div>
+        </div>
+        <div class="post-body">
+          <div class="pb-cell">
+            <div class="pb-label">Формат</div>
+            <div class="pb-val"><span class="fmt"><i>📄</i>Пост</span></div>
+          </div>
+          <div class="pb-cell">
+            <div class="pb-label">Платформы</div>
+            <div class="pb-val">
+              <div class="plats">
+                <span class="pd pd-vk">ВК</span>
+                <span class="pd pd-tg">TG</span>
+                <span class="pd pd-ig">IG</span>
+              </div>
+            </div>
+          </div>
+          <div class="pb-cell">
+            <div class="pb-label">Активы</div>
+            <div class="assets-row">
+              <div class="asset-item"><div class="asset-box ab-ok">✓</div>Текст готов</div>
+              <div class="asset-item"><div class="asset-box ab-wip">…</div>Фото — в работе</div>
+            </div>
+          </div>
+          <div class="pb-cell">
+            <div class="pb-label">Кто</div>
+            <div class="who-list"><span class="who we">Эрик</span><span class="who wk">Катя</span></div>
+          </div>
+        </div>
+        <div class="post-tasks">
+          <div class="task-item done"><div class="task-box"></div><span><strong>Эрик:</strong> написать текст 800–1200 зн., подобрать хэштеги</span></div>
+          <div class="task-item"><div class="task-box"></div><span><strong>Катя:</strong> подобрать lifestyle-фото из архива или поставить задачу на ретушь</span></div>
+          <div class="task-item"><div class="task-box"></div><span><strong>Катя:</strong> сверстать в шаблон IG, добавить лого</span></div>
+          <div class="task-item"><div class="task-box"></div><span><strong>Эрик:</strong> запланировать публикацию в SMMplanner на 12:00</span></div>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-top">
+          <div class="post-top-left">
+            <div class="post-meta-row">
+              <span class="post-num">02</span>
+              <span class="rubric rub-product">Продукт</span>
+            </div>
+            <div class="post-title">Диван «Монако» — цвета весны 2025</div>
+            <div class="post-desc">Рендеры дивана в 4 весенних расцветках: пыльная роза, шалфей, карамель, молочный. Акцент на новые ткани. Без цены — ведём в директ</div>
+          </div>
+          <div class="post-right">
+            <span class="status st-prod"><span class="s-dot"></span>В производстве</span>
+            <span class="time-tag">⏰ 19:00</span>
+          </div>
+        </div>
+        <div class="post-body">
+          <div class="pb-cell">
+            <div class="pb-label">Формат</div>
+            <div class="pb-val"><span class="fmt"><i>🖼</i>Карусель</span></div>
+          </div>
+          <div class="pb-cell">
+            <div class="pb-label">Платформы</div>
+            <div class="pb-val">
+              <div class="plats">
+                <span class="pd pd-ig">IG</span>
+                <span class="pd pd-vk">ВК</span>
+                <span class="pd pd-pin">PIN</span>
+              </div>
+            </div>
+          </div>
+          <div class="pb-cell">
+            <div class="pb-label">Активы</div>
+            <div class="assets-row">
+              <div class="asset-item"><div class="asset-box ab-ok">✓</div>Текст готов</div>
+              <div class="asset-item"><div class="asset-box ab-wip">…</div>4 рендера — у подрядчика</div>
+            </div>
+          </div>
+          <div class="pb-cell">
+            <div class="pb-label">Кто</div>
+            <div class="who-list"><span class="who wk">Катя</span><span class="who we">Эрик</span></div>
+          </div>
+        </div>
+        <div class="post-tasks">
+          <div class="task-item done"><div class="task-box"></div><span><strong>Эрик:</strong> написать подписи к каждому слайду (2–3 строки на цвет)</span></div>
+          <div class="task-item"><div class="task-box"></div><span><strong>Катя:</strong> принять 4 рендера от подрядчика, проверить на соответствие бренд-коду</span></div>
+          <div class="task-item"><div class="task-box"></div><span><strong>Катя:</strong> собрать карусель в Figma: обложка + 4 слайда + финальный CTA-слайд</span></div>
+          <div class="task-item"><div class="task-box"></div><span><strong>Эрик:</strong> адаптировать обложку под Pinterest (вертикальный формат 1000×1500)</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ ПОНЕДЕЛЬНИК 10 ══ -->
+  <div class="day-block">
+    <div class="day-head">
+      <div class="day-circle weekday">
+        <div class="day-num">10</div>
+        <div class="day-name">пн</div>
+      </div>
+      <div class="day-info">
+        <div class="day-title">Понедельник</div>
+        <div class="day-meta">Начало рабочей недели · высокая активность аудитории утром</div>
+      </div>
+      <div class="day-sep-line"></div>
+      <div class="day-count">2 публикации</div>
+    </div>
+    <div class="posts">
+
+      <div class="post-card">
+        <div class="post-top">
+          <div class="post-top-left">
+            <div class="post-meta-row">
+              <span class="post-num">03</span>
+              <span class="rubric rub-edu">Обучение</span>
+            </div>
+            <div class="post-title">Как выбрать диван: 5 вопросов до похода в магазин</div>
+            <div class="post-desc">Карусель-инструкция. Слайд 1 — обложка-крючок. Слайды 2–6 — по одному вопросу: размер / наполнитель / ткань / механизм / цвет. Слайд 7 — итог с призывом писать в директ</div>
+          </div>
+          <div class="post-right">
+            <span class="status st-ready"><span class="s-dot"></span>ТЗ готово</span>
+            <span class="time-tag">⏰ 10:00</span>
+          </div>
+        </div>
+        <div class="post-body">
+          <div class="pb-cell">
+            <div class="pb-label">Формат</div>
+            <div class="pb-val"><span class="fmt"><i>🖼</i>Карусель</span></div>
+          </div>
+          <div class="pb-cell">
+            <div class="pb-label">Платформы</div>
+            <div class="pb-val">
+              <div class="plats">
+                <span class="pd pd-vk">ВК</span>
+                <span class="pd pd-tg">TG</span>
+                <span class="pd pd-ig">IG</span>
+              </div>
+            </div>
+          </div>
+          <div class="pb-cell">
+            <div class="pb-label">Активы</div>
+            <div class="assets-row">
+              <div class="asset-item"><div class="asset-box ab-ok">✓</div>Текст готов</div>
+              <div class="asset-item"><div class="asset-box ab-no">—</div>Дизайн 7 слайдов — нужен</div>
+            </div>
+          </div>
+          <div class="pb-cell">
+            <div class="pb-label">Кто</div>
+            <div class="who-list"><span class="who wk">Катя</span><span class="who we">Эрик</span></div>
+          </div>
+        </div>
+        <div class="post-tasks">
+          <div class="task-item done"><div class="task-box"></div><span><strong>Эрик:</strong> тексты для каждого слайда — максимум 40 слов, тезисно</span></div>
+          <div class="task-item"><div class="task-box"></div><span><strong>Катя:</strong> разработать шаблон карусели в Figma — 7 слайдов с единым стилем</span></div>
+          <div class="task-item"><div class="task-box"></div><span><strong>Катя:</strong> QC — проверить читаемость на мобильном</span></div>
+          <div class="task-item"><div class="task-box"></div><span><strong>Эрик:</strong> адаптировать текст поста для Telegram (без слайдов — только тезисы + ссылка)</span></div>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-top">
+          <div class="post-top-left">
+            <div class="post-meta-row">
+              <span class="post-num">04</span>
+              <span class="rubric rub-bts">BTS</span>
+            </div>
+            <div class="post-title">Как мы делаем рендер: от эскиза до финального изображения</div>
+            <div class="post-desc">Сторис-серия из 6 слайдов. Катя показывает процесс в Blender и Figma. Скриншоты этапов, закулисье дизайна. Заканчивается финальным рендером и вопросом аудитории</div>
+          </div>
+          <div class="post-right">
+            <span class="status st-idea"><span class="s-dot"></span>Идея</span>
+            <span class="time-tag">⏰ 18:00</span>
+          </div>
+        </div>
+        <div class="post-body">
+          <div class="pb-cell">
+            <div class="pb-label">Формат</div>
+            <div class="pb-val"><span class="fmt"><i>⬜</i>Сторис ×6</span></div>
+          </div>
+          <div class="pb-cell">
+            <div class="pb-label">Платформы</div>
+            <div class="pb-val">
+              <div class="plats">
+                <span class="pd pd-ig">IG</span>
+              </div>
+            </div>
+          </div>
+          <div class="pb-cell">
+            <div class="pb-label">Активы</div>
+            <div class="assets-row">
+              <div class="asset-item"><div class="asset-box ab-no">—</div>Текст (подписи) — нужен</div>
+              <div class="asset-item"><div class="asset-box ab-no">—</div>6 скриншотов процесса — нужны</div>
+            </div>
+          </div>
+          <div class="pb-cell">
+            <div class="pb-label">Кто</div>
+            <div class="who-list"><span class="who wk">Катя</span></div>
+          </div>
+        </div>
+        <div class="post-tasks">
+          <div class="task-item"><div class="task-box"></div><span><strong>Катя:</strong> снять скриншоты 6 этапов работы в Blender и Figma</span></div>
+          <div class="task-item"><div class="task-box"></div><span><strong>Катя:</strong> добавить короткие подписи к каждому слайду (1–2 строки)</span></div>
+          <div class="task-item"><div class="task-box"></div><span><strong>Катя:</strong> на последнем слайде — опрос «Хотите видеть больше такого контента?»</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ ВТОРНИК 11 ══ -->
+  <div class="day-block">
+    <div class="day-head">
+      <div class="day-circle weekday">
+        <div class="day-num">11</div>
+        <div class="day-name">вт</div>
+      </div>
+      <div class="day-info">
+        <div class="day-title">Вторник</div>
+        <div class="day-meta">Средняя активность · подходит для продуктовых постов</div>
+      </div>
+      <div class="day-sep-line"></div>
+      <div class="day-count">1 публикация</div>
+    </div>
+    <div class="posts">
+
+      <div class="post-card">
+        <div class="post-top">
+          <div class="post-top-left">
+            <div class="post-meta-row">
+              <span class="post-num">05</span>
+              <span class="rubric rub-product">Продукт</span>
+            </div>
+            <div class="post-title">Кровать «Берлин» — детали, которые замечаешь не сразу</div>
+            <div class="post-desc">Видеоролик 25–30 сек: макрофото обивки, ножек, швов изголовья. Никакого текста — только музыка и детали. В подписи — лаконичное описание материалов и призыв смотреть полный каталог</div>
+          </div>
+          <div class="post-right">
+            <span class="status st-idea"><span class="s-dot"></span>Идея</span>
+            <span class="time-tag">⏰ 14:00</span>
+          </div>
+        </div>
+        <div class="post-body">
+          <div class="pb-cell">
+            <div class="pb-label">Формат</div>
+            <div class="pb-val"><span class="fmt"><i>▶</i>Видео 30 сек</span></div>
+          </div>
+          <div class="pb-cell">
+            <div class="pb-label">Платформы</div>
+            <div class="pb-val">
+              <div class="plats">
+                <span class="pd pd-ig">IG</span>
+                <span class="pd pd-vk">ВК</span>
+              </div>
+            </div>
+          </div>
+          <div class="pb-cell">
+            <div class="pb-label">Активы</div>
+            <div class="assets-row">
+              <div class="asset-item"><div class="asset-box ab-no">—</div>Текст подписи — нужен</div>
+              <div class="asset-item"><div class="asset-box ab-no">—</div>Видеосъёмка — нужна</div>
+            </div>
+          </div>
+          <div class="pb-cell">
+            <div class="pb-label">Кто</div>
+            <div class="who-list"><span class="who we">Эрик</span><span class="who wk">Катя</span></div>
+          </div>
+        </div>
+        <div class="post-tasks">
+          <div class="task-item"><div class="task-box"></div><span><strong>Эрик:</strong> организовать съёмку макро-деталей кровати (оператор или своими силами)</span></div>
+          <div class="task-item"><div class="task-box"></div><span><strong>Эрик:</strong> смонтировать ролик 25–30 сек, добавить фоновую музыку без слов</span></div>
+          <div class="task-item"><div class="task-box"></div><span><strong>Эрик:</strong> написать подпись: 3–4 строки + хэштеги</span></div>
+          <div class="task-item"><div class="task-box"></div><span><strong>Катя:</strong> QC видео — соответствие цвета, бренд-код, обложка ролика</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ СРЕДА 12 ══ -->
+  <div class="day-block">
+    <div class="day-head">
+      <div class="day-circle weekday">
+        <div class="day-num">12</div>
+        <div class="day-name">ср</div>
+      </div>
+      <div class="day-info">
+        <div class="day-title">Среда</div>
+        <div class="day-meta">Пик активности середины недели · UGC и вовлечение</div>
+      </div>
+      <div class="day-sep-line"></div>
+      <div class="day-count">2 публикации</div>
+    </div>
+    <div class="posts">
+
+      <div class="post-card">
+        <div class="post-top">
+          <div class="post-top-left">
+            <div class="post-meta-row">
+              <span class="post-num">06</span>
+              <span class="rubric rub-ugc">UGC</span>
+            </div>
+            <div class="post-title">Ваш интерьер с нашим диваном — реальные фото покупателей</div>
+            <div class="post-desc">Карусель из 4 реальных фото клиентов с комментариями. Короткая цитата от каждого. Финальный слайд — призыв прислать своё фото и получить скидку 5% на следующую покупку</div>
+          </div>
+          <div class="post-right">
+            <span class="status st-idea"><span class="s-dot"></span>Идея</span>
+            <span class="time-tag">⏰ 11:00</span>
+          </div>
+        </div>
+        <div class="post-body">
+          <div class="pb-cell">
+            <div class="pb-label">Формат</div>
+            <div class="pb-val"><span class="fmt"><i>🖼</i>Карусель</span></div>
+          </div>
+          <div class="pb-cell">
+            <div class="pb-label">Платформы</div>
+            <div class="pb-val">
+              <div class="plats">
+                <span class="pd pd-vk">ВК</span>
+                <span class="pd pd-tg">TG</span>
+                <span class="pd pd-ig">IG</span>
+              </div>
+            </div>
+          </div>
+          <div class="pb-cell">
+            <div class="pb-label">Активы</div>
+            <div class="assets-row">
+              <div class="asset-item"><div class="asset-box ab-no">—</div>Текст — нужен</div>
+              <div class="asset-item"><div class="asset-box ab-no">—</div>4 клиентских фото — запросить у Александры</div>
+            </div>
+          </div>
+          <div class="pb-cell">
+            <div class="pb-label">Кто</div>
+            <div class="who-list"><span class="who we">Эрик</span><span class="who wk">Катя</span></div>
+          </div>
+        </div>
+        <div class="post-tasks">
+          <div class="task-item"><div class="task-box"></div><span><strong>Эрик:</strong> запросить у Александры 4–5 фото от клиентов с разрешением на публикацию</span></div>
+          <div class="task-item"><div class="task-box"></div><span><strong>Эрик:</strong> написать короткие цитаты от лица клиентов + общую подпись поста</span></div>
+          <div class="task-item"><div class="task-box"></div><span><strong>Катя:</strong> обработать фото (яркость, цвет), добавить рамку и цитату в фирменном стиле</span></div>
+          <div class="task-item"><div class="task-box"></div><span><strong>Эрик:</strong> уточнить у Александры условие акции (5% — согласована ли скидка?)</span></div>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-top">
+          <div class="post-top-left">
+            <div class="post-meta-row">
+              <span class="post-num">07</span>
+              <span class="rubric rub-engage">Вовлечение</span>
+            </div>
+            <div class="post-title">Какой цвет дивана вы бы выбрали для своей гостиной?</div>
+            <div class="post-desc">Интерактивный пост-опрос. 4 рендера дивана в разных цветах. В подписи — вопрос и варианты ответа в комментариях. Цель: вовлечение + сбор данных о предпочтениях</div>
+          </div>
+          <div class="post-right">
+            <span class="status st-idea"><span class="s-dot"></span>Идея</span>
+            <span class="time-tag">⏰ 20:00</span>
+          </div>
+        </div>
+        <div class="post-body">
+          <div class="pb-cell">
+            <div class="pb-label">Формат</div>
+            <div class="pb-val"><span class="fmt"><i>📄</i>Пост + опрос</span></div>
+          </div>
+          <div class="pb-cell">
+            <div class="pb-label">Платформы</div>
+            <div class="pb-val">
+              <div class="plats">
+                <span class="pd pd-vk">ВК</span>
+                <span class="pd pd-ig">IG</span>
+              </div>
+            </div>
+          </div>
+          <div class="pb-cell">
+            <div class="pb-label">Активы</div>
+            <div class="assets-row">
+              <div class="asset-item"><div class="asset-box ab-no">—</div>Текст — нужен</div>
+              <div class="asset-item"><div class="asset-box ab-no">—</div>4 рендера цветов — из архива Кати</div>
+            </div>
+          </div>
+          <div class="pb-cell">
+            <div class="pb-label">Кто</div>
+            <div class="who-list"><span class="who we">Эрик</span><span class="who wk">Катя</span></div>
+          </div>
+        </div>
+        <div class="post-tasks">
+          <div class="task-item"><div class="task-box"></div><span><strong>Катя:</strong> подобрать 4 рендера из архива — разные цвета одной модели</span></div>
+          <div class="task-item"><div class="task-box"></div><span><strong>Эрик:</strong> написать вовлекающую подпись + добавить опрос ВКонтакте</span></div>
+          <div class="task-item"><div class="task-box"></div><span><strong>Эрик:</strong> в IG Stories — интерактивный стикер с голосованием на следующий день</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ ЧЕТВЕРГ 13 ══ -->
+  <div class="day-block">
+    <div class="day-head">
+      <div class="day-circle weekday">
+        <div class="day-num">13</div>
+        <div class="day-name">чт</div>
+      </div>
+      <div class="day-info">
+        <div class="day-title">Четверг</div>
+        <div class="day-meta">Продуктивный день · хорошо заходят образовательные форматы</div>
+      </div>
+      <div class="day-sep-line"></div>
+      <div class="day-count">2 публикации</div>
+    </div>
+    <div class="posts">
+
+      <div class="post-card">
+        <div class="post-top">
+          <div class="post-top-left">
+            <div class="post-meta-row">
+              <span class="post-num">08</span>
+              <span class="rubric rub-edu">Обучение</span>
+            </div>
+            <div class="post-title">Диван-книжка vs еврокнижка: в чём разница и что выбрать</div>
+            <div class="post-desc">Инфографика с анимированным объяснением механизмов. Простым языком — для тех, кто никогда не разбирался. Итоговая рекомендация зависит от задачи</div>
+          </div>
+          <div class="post-right">
+            <span class="status st-idea"><span class="s-dot"></span>Идея</span>
+            <span class="time-tag">⏰ 10:00</span>
+          </div>
+        </div>
+        <div class="post-body">
+          <div class="pb-cell">
+            <div class="pb-label">Формат</div>
+            <div class="pb-val"><span class="fmt"><i>🖼</i>Инфографика</span></div>
+          </div>
+          <div class="pb-cell">
+            <div class="pb-label">Платформы</div>
+            <div class="pb-val">
+              <div class="plats">
+                <span class="pd pd-vk">ВК</span>
+                <span class="pd pd-tg">TG</span>
+              </div>
+            </div>
+          </div>
+          <div class="pb-cell">
+            <div class="pb-label">Активы</div>
+            <div class="assets-row">
+              <div class="asset-item"><div class="asset-box ab-no">—</div>Текст — нужен</div>
+              <div class="asset-item"><div class="asset-box ab-no">—</div>Инфографика — нужна</div>
+            </div>
+          </div>
+          <div class="pb-cell">
+            <div class="pb-label">Кто</div>
+            <div class="who-list"><span class="who we">Эрик</span><span class="who wk">Катя</span></div>
+          </div>
+        </div>
+        <div class="post-tasks">
+          <div class="task-item"><div class="task-box"></div><span><strong>Эрик:</strong> написать объяснение простым языком: 2–3 предложения на каждый тип</span></div>
+          <div class="task-item"><div class="task-box"></div><span><strong>Катя:</strong> нарисовать схему механизмов в Figma — понятно и на уровне иллюстрации</span></div>
+          <div class="task-item"><div class="task-box"></div><span><strong>Катя:</strong> QC — читаемость, пропорции, соответствие стилю бренда</span></div>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-top">
+          <div class="post-top-left">
+            <div class="post-meta-row">
+              <span class="post-num">09</span>
+              <span class="rubric rub-lifestyle">Lifestyle</span>
+            </div>
+            <div class="post-title">Весна дома: меняем текстиль и настроение</div>
+            <div class="post-desc">Рилс 15–20 сек. Быстрая «трансформация» интерьера: меняем тёмные подушки и плед на светлые весенние. Акцент — диван как основа, текстиль — настройка</div>
+          </div>
+          <div class="post-right">
+            <span class="status st-idea"><span class="s-dot"></span>Идея</span>
+            <span class="time-tag">⏰ 18:30</span>
+          </div>
+        </div>
+        <div class="post-body">
+          <div class="pb-cell">
+            <div class="pb-label">Формат</div>
+            <div class="pb-val"><span class="fmt"><i>▶</i>Рилс 20 сек</span></div>
+          </div>
+          <div class="pb-cell">
+            <div class="pb-label">Платформы</div>
+            <div class="pb-val">
+              <div class="plats">
+                <span class="pd pd-ig">IG</span>
+                <span class="pd pd-vk">ВК</span>
+              </div>
+            </div>
+          </div>
+          <div class="pb-cell">
+            <div class="pb-label">Активы</div>
+            <div class="assets-row">
+              <div class="asset-item"><div class="asset-box ab-no">—</div>Подпись — нужна</div>
+              <div class="asset-item"><div class="asset-box ab-no">—</div>Видеосъёмка — нужна</div>
+            </div>
+          </div>
+          <div class="pb-cell">
+            <div class="pb-label">Кто</div>
+            <div class="who-list"><span class="who we">Эрик</span></div>
+          </div>
+        </div>
+        <div class="post-tasks">
+          <div class="task-item"><div class="task-box"></div><span><strong>Эрик:</strong> организовать съёмку: диван + 2 варианта текстиля (тёмный → светлый)</span></div>
+          <div class="task-item"><div class="task-box"></div><span><strong>Эрик:</strong> смонтировать под трендовый звук из IG, добавить переход</span></div>
+          <div class="task-item"><div class="task-box"></div><span><strong>Катя:</strong> QC итогового ролика — цвет и свет соответствуют бренду</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ ПЯТНИЦА 14 ══ -->
+  <div class="day-block">
+    <div class="day-head">
+      <div class="day-circle weekday">
+        <div class="day-num">14</div>
+        <div class="day-name">пт</div>
+      </div>
+      <div class="day-info">
+        <div class="day-title">Пятница</div>
+        <div class="day-meta">День перед выходными · аудитория в приподнятом настроении · хорошо для анонсов</div>
+      </div>
+      <div class="day-sep-line"></div>
+      <div class="day-count">2 публикации</div>
+    </div>
+    <div class="posts">
+
+      <div class="post-card">
+        <div class="post-top">
+          <div class="post-top-left">
+            <div class="post-meta-row">
+              <span class="post-num">10</span>
+              <span class="rubric rub-product">Продукт</span>
+            </div>
+            <div class="post-title">Кресло «Лион» — для тех, кто ценит качество в деталях</div>
+            <div class="post-desc">Пост с 3 фотографиями: общий вид, деталь ножки, деталь шва. Текст — про то, что хорошая мебель не требует объяснений. В конце — цена и ссылка на каталог</div>
+          </div>
+          <div class="post-right">
+            <span class="status st-idea"><span class="s-dot"></span>Идея</span>
+            <span class="time-tag">⏰ 12:00</span>
+          </div>
+        </div>
+        <div class="post-body">
+          <div class="pb-cell">
+            <div class="pb-label">Формат</div>
+            <div class="pb-val"><span class="fmt"><i>📄</i>Пост + 3 фото</span></div>
+          </div>
+          <div class="pb-cell">
+            <div class="pb-label">Платформы</div>
+            <div class="pb-val">
+              <div class="plats">
+                <span class="pd pd-vk">ВК</span>
+                <span class="pd pd-ig">IG</span>
+                <span class="pd pd-pin">PIN</span>
+              </div>
+            </div>
+          </div>
+          <div class="pb-cell">
+            <div class="pb-label">Активы</div>
+            <div class="assets-row">
+              <div class="asset-item"><div class="asset-box ab-no">—</div>Текст — нужен</div>
+              <div class="asset-item"><div class="asset-box ab-no">—</div>3 рендера/фото — нужны</div>
+            </div>
+          </div>
+          <div class="pb-cell">
+            <div class="pb-label">Кто</div>
+            <div class="who-list"><span class="who wk">Катя</span><span class="who we">Эрик</span></div>
+          </div>
+        </div>
+        <div class="post-tasks">
+          <div class="task-item"><div class="task-box"></div><span><strong>Катя:</strong> подготовить 3 рендера кресла «Лион» — общий + 2 детальных</span></div>
+          <div class="task-item"><div class="task-box"></div><span><strong>Эрик:</strong> написать текст в философском ключе, без агрессивных продаж</span></div>
+          <div class="task-item"><div class="task-box"></div><span><strong>Эрик:</strong> уточнить актуальную цену у Александры перед публикацией</span></div>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-top">
+          <div class="post-top-left">
+            <div class="post-meta-row">
+              <span class="post-num">11</span>
+              <span class="rubric rub-news">Новости</span>
+            </div>
+            <div class="post-title">На следующей неделе — кое-что интересное 👀</div>
+            <div class="post-desc">Интригующий анонс новой коллекции или акции без раскрытия деталей. Сторис — 3 слайда: «скоро», намёк, дата. Цель — поднять ожидание перед выходными</div>
+          </div>
+          <div class="post-right">
+            <span class="status st-idea"><span class="s-dot"></span>Идея</span>
+            <span class="time-tag">⏰ 20:00</span>
+          </div>
+        </div>
+        <div class="post-body">
+          <div class="pb-cell">
+            <div class="pb-label">Формат</div>
+            <div class="pb-val"><span class="fmt"><i>⬜</i>Сторис ×3</span></div>
+          </div>
+          <div class="pb-cell">
+            <div class="pb-label">Платформы</div>
+            <div class="pb-val">
+              <div class="plats">
+                <span class="pd pd-ig">IG</span>
+                <span class="pd pd-tg">TG</span>
+              </div>
+            </div>
+          </div>
+          <div class="pb-cell">
+            <div class="pb-label">Активы</div>
+            <div class="assets-row">
+              <div class="asset-item"><div class="asset-box ab-no">—</div>Текст — нужен</div>
+              <div class="asset-item"><div class="asset-box ab-no">—</div>Тизер-визуал — нужен</div>
+            </div>
+          </div>
+          <div class="pb-cell">
+            <div class="pb-label">Кто</div>
+            <div class="who-list"><span class="who wk">Катя</span><span class="who we">Эрик</span></div>
+          </div>
+        </div>
+        <div class="post-tasks">
+          <div class="task-item"><div class="task-box"></div><span><strong>Эрик:</strong> уточнить у Александры — что анонсируем (коллекция? акция? мероприятие?)</span></div>
+          <div class="task-item"><div class="task-box"></div><span><strong>Катя:</strong> сделать тизер-визуал с размытием или фрагментом продукта</span></div>
+          <div class="task-item"><div class="task-box"></div><span><strong>Эрик:</strong> написать интригующую подпись без спойлеров</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ СУББОТА 15 ══ -->
+  <div class="day-block">
+    <div class="day-head">
+      <div class="day-circle weekend">
+        <div class="day-num">15</div>
+        <div class="day-name">сб</div>
+      </div>
+      <div class="day-info">
+        <div class="day-title">Суббота</div>
+        <div class="day-meta">Выходной день · пик просмотров в 11:00–13:00 и 19:00–22:00</div>
+      </div>
+      <div class="day-sep-line"></div>
+      <div class="day-count">2 публикации</div>
+    </div>
+    <div class="posts">
+
+      <div class="post-card">
+        <div class="post-top">
+          <div class="post-top-left">
+            <div class="post-meta-row">
+              <span class="post-num">12</span>
+              <span class="rubric rub-lifestyle">Lifestyle</span>
+            </div>
+            <div class="post-title">Суббота создана для того, чтобы наконец выспаться</div>
+            <div class="post-desc">Атмосферное фото кровати «Берлин» — утренний свет, смятые простыни, кофе на тумбочке. Минимум текста. Передаём ощущение, а не продаём функцию</div>
+          </div>
+          <div class="post-right">
+            <span class="status st-idea"><span class="s-dot"></span>Идея</span>
+            <span class="time-tag">⏰ 11:00</span>
+          </div>
+        </div>
+        <div class="post-body">
+          <div class="pb-cell">
+            <div class="pb-label">Формат</div>
+            <div class="pb-val"><span class="fmt"><i>📄</i>Пост</span></div>
+          </div>
+          <div class="pb-cell">
+            <div class="pb-label">Платформы</div>
+            <div class="pb-val">
+              <div class="plats">
+                <span class="pd pd-ig">IG</span>
+                <span class="pd pd-pin">PIN</span>
+                <span class="pd pd-tg">TG</span>
+              </div>
+            </div>
+          </div>
+          <div class="pb-cell">
+            <div class="pb-label">Активы</div>
+            <div class="assets-row">
+              <div class="asset-item"><div class="asset-box ab-no">—</div>Текст — нужен</div>
+              <div class="asset-item"><div class="asset-box ab-no">—</div>Lifestyle-фото — нужно</div>
+            </div>
+          </div>
+          <div class="pb-cell">
+            <div class="pb-label">Кто</div>
+            <div class="who-list"><span class="who we">Эрик</span></div>
+          </div>
+        </div>
+        <div class="post-tasks">
+          <div class="task-item"><div class="task-box"></div><span><strong>Эрик:</strong> снять утреннее lifestyle-фото кровати с реквизитом (кофе, книга, свет)</span></div>
+          <div class="task-item"><div class="task-box"></div><span><strong>Эрик:</strong> написать 2–3 строки + хэштеги. Тон — тёплый, ненавязчивый</span></div>
+          <div class="task-item"><div class="task-box"></div><span><strong>Катя:</strong> QC цветокоррекции фото</span></div>
+        </div>
+      </div>
+
+      <div class="post-card">
+        <div class="post-top">
+          <div class="post-top-left">
+            <div class="post-meta-row">
+              <span class="post-num">13</span>
+              <span class="rubric rub-promo">Акция</span>
+            </div>
+            <div class="post-title">Только до конца марта: скидка 10% на кресла и пуфы</div>
+            <div class="post-desc">Промо-пост с яркой карточкой. Чёткие условия: что входит, срок, промокод или ссылка. Акцент на ограниченность предложения. Дополнительно — сторис с отсчётом</div>
+          </div>
+          <div class="post-right">
+            <span class="status st-idea"><span class="s-dot"></span>Идея</span>
+            <span class="time-tag">⏰ 19:00</span>
+          </div>
+        </div>
+        <div class="post-body">
+          <div class="pb-cell">
+            <div class="pb-label">Формат</div>
+            <div class="pb-val"><span class="fmt"><i>📄</i>Пост + сторис</span></div>
+          </div>
+          <div class="pb-cell">
+            <div class="pb-label">Платформы</div>
+            <div class="pb-val">
+              <div class="plats">
+                <span class="pd pd-vk">ВК</span>
+                <span class="pd pd-tg">TG</span>
+                <span class="pd pd-ig">IG</span>
+              </div>
+            </div>
+          </div>
+          <div class="pb-cell">
+            <div class="pb-label">Активы</div>
+            <div class="assets-row">
+              <div class="asset-item"><div class="asset-box ab-no">—</div>Текст — нужен</div>
+              <div class="asset-item"><div class="asset-box ab-no">—</div>Промо-карточка — нужна</div>
+            </div>
+          </div>
+          <div class="pb-cell">
+            <div class="pb-label">Кто</div>
+            <div class="who-list"><span class="who wk">Катя</span><span class="who we">Эрик</span></div>
+          </div>
+        </div>
+        <div class="post-tasks">
+          <div class="task-item"><div class="task-box"></div><span><strong>Эрик:</strong> согласовать условия акции с Александрой (% скидки, что входит, промокод)</span></div>
+          <div class="task-item"><div class="task-box"></div><span><strong>Катя:</strong> сделать промо-карточку в фирменном стиле с ценой и сроком</span></div>
+          <div class="task-item"><div class="task-box"></div><span><strong>Эрик:</strong> написать продающий текст с ограниченностью и призывом к действию</span></div>
+          <div class="task-item"><div class="task-box"></div><span><strong>Катя:</strong> сделать сторис с таймером обратного отсчёта</span></div>
+          <div class="task-item"><div class="task-box"></div><span><strong>Эрик:</strong> настроить таргет на пост (бюджет и аудитория — согласовать с Александрой)</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SUMMARY -->
+  <div class="summary">
+    <div class="sum-block">
+      <div class="sum-label">Итого за неделю</div>
+      <div class="sum-val">13</div>
+      <div class="sum-sub">публикаций · 9–15 марта</div>
+    </div>
+    <div class="sum-divider"></div>
+    <div class="sum-block">
+      <div class="sum-label">По рубрикам</div>
+      <div class="sum-row">
+        <div class="sr-item"><div class="sr-val" style="color:#7ad4a4">3</div><div class="sr-lbl">Продукт</div></div>
+        <div class="sr-item"><div class="sr-val" style="color:var(--gold2)">3</div><div class="sr-lbl">Lifestyle</div></div>
+        <div class="sr-item"><div class="sr-val" style="color:#88b2de">2</div><div class="sr-lbl">Обучение</div></div>
+        <div class="sr-item"><div class="sr-val" style="color:#c4a8f0">1</div><div class="sr-lbl">UGC</div></div>
+        <div class="sr-item"><div class="sr-val" style="color:#e8909a">1</div><div class="sr-lbl">Акция</div></div>
+        <div class="sr-item"><div class="sr-val" style="color:#d4a860">1</div><div class="sr-lbl">BTS</div></div>
+        <div class="sr-item"><div class="sr-val" style="color:#80dfa8">1</div><div class="sr-lbl">Вовлечение</div></div>
+        <div class="sr-item"><div class="sr-val" style="color:#c0c0c0">1</div><div class="sr-lbl">Новости</div></div>
+      </div>
+    </div>
+    <div class="sum-divider"></div>
+    <div class="sum-block">
+      <div class="sum-label">По форматам</div>
+      <div class="sum-row">
+        <div class="sr-item"><div class="sr-val">5</div><div class="sr-lbl">Пост</div></div>
+        <div class="sr-item"><div class="sr-val">4</div><div class="sr-lbl">Карусель</div></div>
+        <div class="sr-item"><div class="sr-val">2</div><div class="sr-lbl">Рилс/Видео</div></div>
+        <div class="sr-item"><div class="sr-val">4</div><div class="sr-lbl">Сторис</div></div>
+        <div class="sr-item"><div class="sr-val">1</div><div class="sr-lbl">Инфографика</div></div>
+      </div>
+    </div>
+    <div class="sum-divider"></div>
+    <div class="sum-block">
+      <div class="sum-label">Статус</div>
+      <div class="sum-row">
+        <div class="sr-item"><div class="sr-val" style="color:var(--s-prod-t)">1</div><div class="sr-lbl">В работе</div></div>
+        <div class="sr-item"><div class="sr-val" style="color:var(--s-ready-t)">2</div><div class="sr-lbl">ТЗ есть</div></div>
+        <div class="sr-item"><div class="sr-val" style="color:var(--s-idea-t)">10</div><div class="sr-lbl">Идея</div></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
