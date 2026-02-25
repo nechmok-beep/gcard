@@ -3,1029 +3,619 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gray Cardinal — Контент-план 9–15 марта</title>
+<title>Gray Cardinal — Контент-план</title>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700&family=Golos+Text:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
   --bg:#141414; --frame:#1f1f1f; --frame2:#252525;
-  --border:#2a2a2a; --border2:#363636;
-  --katya:#a82035; --katya2:#c42a43; --katya-bg:rgba(168,32,53,.15);
-  --erik:#1e3f72;  --erik2:#2a5499;  --erik-bg:rgba(30,63,114,.18);
-  --alex:#464646;  --alex2:#5a5a5a;
-  --gold:#c09a4a; --gold2:#e0be78;
+  --border:#2a2a2a; --border2:#383838;
+  --katya:#a82035; --katya2:#c42a43;
+  --erik:#1e3f72;  --erik2:#2a5499;
+  --gold:#c09a4a;  --gold2:#e0be78;
   --green:#2a6645; --green2:#3d9963;
-  --text:#e2ddd8; --text2:#9a9088; --text3:#5a5248; --white:#f5f2ee;
-  --s-idea-bg:rgba(90,63,138,.22);   --s-idea-b:rgba(124,91,181,.4);   --s-idea-t:#c4a8f0;
-  --s-ready-bg:rgba(192,154,74,.18); --s-ready-b:rgba(192,154,74,.4);  --s-ready-t:var(--gold2);
-  --s-prod-bg:rgba(30,63,114,.22);   --s-prod-b:rgba(42,84,153,.45);   --s-prod-t:#88b2de;
-  --s-done-bg:rgba(42,102,69,.2);    --s-done-b:rgba(42,102,69,.45);   --s-done-t:#7ad4a4;
-  --s-pub-bg:rgba(168,32,53,.18);    --s-pub-b:rgba(196,42,67,.4);     --s-pub-t:#e8909a;
+  --text:#e2ddd8;  --text2:#9a9088; --text3:#5a5248; --white:#f5f2ee;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:var(--bg);font-family:'Golos Text',sans-serif;color:var(--text);min-height:100vh}
 
-/* TOPBAR */
-.topbar{position:sticky;top:0;z-index:100;background:rgba(14,14,14,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:0 24px;height:50px;display:flex;align-items:center;justify-content:space-between}
-.tb-left{display:flex;align-items:center;gap:14px}
-.tb-logo{font-family:'Unbounded',sans-serif;font-size:11px;font-weight:700;color:var(--white);letter-spacing:.1em}
+/* ── TOPBAR ── */
+.topbar{position:sticky;top:0;z-index:200;background:rgba(14,14,14,.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 24px;height:52px;display:flex;align-items:center;justify-content:space-between}
+.tb-logo{font-family:'Unbounded',sans-serif;font-size:12px;font-weight:700;color:var(--white);letter-spacing:.1em}
 .tb-logo span{color:var(--gold2)}
-.tb-sep{width:1px;height:18px;background:var(--border2)}
-.tb-title{font-size:11px;color:var(--text3);letter-spacing:.06em}
-.tb-right{display:flex;gap:8px;align-items:center}
-.plat{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:3px}
-.plat-vk {background:rgba(0,119,255,.15);color:#6da8ff;border:1px solid rgba(0,119,255,.28)}
-.plat-tg {background:rgba(36,161,222,.12);color:#7fd8f8;border:1px solid rgba(36,161,222,.22)}
-.plat-ig {background:rgba(192,74,120,.12);color:#f0a0c0;border:1px solid rgba(192,74,120,.22)}
-.plat-pin{background:rgba(189,8,28,.1);color:#ff8090;border:1px solid rgba(189,8,28,.2)}
+.tb-actions{display:flex;gap:8px}
+.btn{font-size:11px;font-weight:600;padding:6px 14px;border-radius:5px;cursor:pointer;border:none;transition:all .15s;letter-spacing:.03em}
+.btn-add{background:var(--gold);color:#0e0c06}
+.btn-add:hover{background:var(--gold2)}
+.btn-save{background:rgba(42,102,69,.3);color:#7ad4a4;border:1px solid rgba(42,102,69,.5)}
+.btn-save:hover{background:rgba(42,102,69,.5)}
+.btn-reset{background:rgba(60,60,60,.3);color:var(--text2);border:1px solid var(--border2)}
+.btn-reset:hover{background:rgba(80,80,80,.4)}
 
-/* WEEK HEADER */
-.week-hero{background:var(--frame);border-bottom:1px solid var(--border);padding:18px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
-.wh-left{}
-.wh-label{font-size:9px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:5px}
-.wh-title{font-family:'Unbounded',sans-serif;font-size:20px;font-weight:700;color:var(--white)}
-.wh-sub{font-size:11px;color:var(--text3);margin-top:4px}
-.wh-stats{display:flex;gap:10px;flex-wrap:wrap}
-.ws{background:rgba(0,0,0,.25);border:1px solid var(--border);border-radius:6px;padding:8px 14px;text-align:center}
-.ws-val{font-family:'Unbounded',sans-serif;font-size:18px;font-weight:700;color:var(--white)}
-.ws-lbl{font-size:9px;color:var(--text3);margin-top:2px;letter-spacing:.04em}
+/* ── FILTERS ── */
+.filters{padding:10px 24px;border-bottom:1px solid var(--border);background:rgba(0,0,0,.15);display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.filter-label{font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--text3);margin-right:4px}
+.filter-select{background:rgba(0,0,0,.3);border:1px solid var(--border2);color:var(--text2);font-size:11px;padding:4px 10px;border-radius:4px;cursor:pointer;font-family:'Golos Text',sans-serif;outline:none}
+.filter-select:hover{border-color:var(--border2);color:var(--text)}
+.filter-sep{width:1px;height:20px;background:var(--border)}
 
-/* STATUS LEGEND */
-.status-bar{padding:10px 24px;display:flex;align-items:center;gap:16px;border-bottom:1px solid var(--border);background:rgba(0,0,0,.1);flex-wrap:wrap}
-.sb-label{font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--text3)}
-.sl{display:flex;align-items:center;gap:5px;font-size:10px;color:var(--text2)}
-.sl-dot{width:7px;height:7px;border-radius:2px}
+/* ── WEEK TABS ── */
+.week-tabs{padding:0 24px;border-bottom:1px solid var(--border);display:flex;gap:0;background:var(--frame)}
+.week-tab{padding:12px 20px;font-size:11px;font-weight:600;color:var(--text3);cursor:pointer;border-bottom:2px solid transparent;transition:all .15s;white-space:nowrap;letter-spacing:.03em}
+.week-tab:hover{color:var(--text2)}
+.week-tab.active{color:var(--gold2);border-bottom-color:var(--gold)}
+.week-add-tab{padding:12px 16px;font-size:18px;color:var(--text3);cursor:pointer;transition:color .15s}
+.week-add-tab:hover{color:var(--gold2)}
 
-/* WRAPPER */
-.wrap{padding:16px 24px 60px;overflow-x:auto}
+/* ── MAIN ── */
+.main{padding:16px 24px 60px;max-width:1400px}
 
-/* DAY SECTIONS */
-.day-block{margin-bottom:24px;animation:fu .4s ease both}
-@keyframes fu{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-.day-block:nth-child(1){animation-delay:.04s}.day-block:nth-child(2){animation-delay:.1s}
-.day-block:nth-child(3){animation-delay:.16s}.day-block:nth-child(4){animation-delay:.22s}
-.day-block:nth-child(5){animation-delay:.28s}.day-block:nth-child(6){animation-delay:.34s}
-.day-block:nth-child(7){animation-delay:.40s}
+/* ── TABLE ── */
+.cp-table{width:100%;border-collapse:separate;border-spacing:0;border:1px solid var(--border);border-radius:12px;overflow:hidden;min-width:1200px}
+.cp-table thead th{background:#0e0e0e;padding:10px 12px;font-size:8.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--text3);text-align:left;border-bottom:1px solid var(--border2);white-space:nowrap;position:sticky;top:52px;z-index:10}
+.cp-table thead th:not(:last-child){border-right:1px solid var(--border)}
 
-.day-head{display:flex;align-items:center;gap:12px;margin-bottom:10px}
-.day-circle{width:46px;height:46px;border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0;border:1px solid var(--border2)}
-.day-circle.weekend{border-color:rgba(192,154,74,.3);background:rgba(192,154,74,.06)}
-.day-circle.weekday{border-color:var(--border2);background:rgba(255,255,255,.03)}
-.day-num{font-family:'Unbounded',sans-serif;font-size:16px;font-weight:700;color:var(--white);line-height:1}
-.day-name{font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-top:2px}
-.day-info{}
-.day-title{font-family:'Unbounded',sans-serif;font-size:13px;font-weight:600;color:var(--white)}
-.day-meta{font-size:10.5px;color:var(--text3);margin-top:2px}
-.day-sep-line{flex:1;height:1px;background:var(--border)}
-.day-count{font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text3);background:var(--frame2);border:1px solid var(--border);border-radius:4px;padding:3px 9px;white-space:nowrap}
+/* ROW */
+.cp-table tbody tr{transition:background .1s}
+.cp-table tbody tr:hover td{background:rgba(255,255,255,.02) !important}
+.cp-table tbody td{padding:9px 12px;vertical-align:middle;border-bottom:1px solid var(--border);font-size:12px}
+.cp-table tbody tr:last-child td{border-bottom:none}
+.cp-table tbody td:not(:last-child){border-right:1px solid var(--border)}
+.row-odd td{background:var(--frame)}
+.row-even td{background:rgba(0,0,0,.1)}
 
-/* POST CARDS */
-.posts{display:flex;flex-direction:column;gap:8px}
+/* WEEK SEPARATOR */
+.week-row td{background:#0a0a0a !important;padding:7px 12px;font-size:8.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--text3);border-bottom:1px solid var(--border2)}
+.week-row td span{background:var(--gold);color:#0e0c06;padding:1px 7px;border-radius:3px;font-size:8px}
 
-.post-card{background:var(--frame);border:1px solid var(--border);border-radius:10px;overflow:hidden;transition:box-shadow .15s}
-.post-card:hover{box-shadow:0 6px 20px rgba(0,0,0,.32)}
+/* ── CELL TYPES ── */
+.c-num{font-family:'Unbounded',sans-serif;font-size:10px;font-weight:700;color:var(--text3);text-align:center;width:40px}
+.c-date{width:80px;white-space:nowrap}
+.date-day{font-size:12px;color:var(--text2);font-weight:500}
+.date-name{font-size:9px;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin-top:2px}
+.date-name.weekend{color:var(--gold)}
 
-.post-top{display:grid;grid-template-columns:1fr auto;gap:12px;padding:13px 16px 11px;border-bottom:1px solid var(--border)}
-.post-top-left{}
-.post-meta-row{display:flex;align-items:center;gap:6px;margin-bottom:6px;flex-wrap:wrap}
-.post-num{font-family:'Unbounded',sans-serif;font-size:9px;font-weight:700;color:var(--text3)}
-.rubric{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:2px 8px;border-radius:3px}
-.rub-lifestyle{background:rgba(192,154,74,.15);color:var(--gold2);border:1px solid rgba(192,154,74,.25)}
-.rub-product  {background:rgba(42,102,69,.18);color:#7ad4a4;border:1px solid rgba(42,102,69,.3)}
-.rub-promo    {background:rgba(168,32,53,.18);color:#e8909a;border:1px solid rgba(168,32,53,.3)}
-.rub-ugc      {background:rgba(90,63,138,.18);color:#c4a8f0;border:1px solid rgba(90,63,138,.3)}
-.rub-edu      {background:rgba(30,63,114,.18);color:#88b2de;border:1px solid rgba(30,63,114,.3)}
-.rub-bts      {background:rgba(80,60,20,.25);color:#d4a860;border:1px solid rgba(140,100,30,.3)}
-.rub-news     {background:rgba(50,50,50,.3);color:#c0c0c0;border:1px solid rgba(80,80,80,.3)}
-.rub-engage   {background:rgba(36,120,80,.18);color:#80dfa8;border:1px solid rgba(36,120,80,.3)}
+/* EDITABLE */
+[contenteditable]{outline:none;border-radius:4px;padding:2px 4px;transition:background .12s;min-width:20px;display:inline-block}
+[contenteditable]:hover{background:rgba(255,255,255,.04)}
+[contenteditable]:focus{background:rgba(255,255,255,.07);box-shadow:0 0 0 1px rgba(192,154,74,.3)}
+.topic-title{font-size:13px;font-weight:600;color:var(--white);line-height:1.35;display:block}
+.topic-sub{font-size:11px;color:var(--text3);line-height:1.4;display:block;margin-top:2px}
 
-.post-title{font-size:14px;font-weight:600;color:var(--white);line-height:1.35;margin-bottom:4px}
-.post-desc{font-size:12px;color:var(--text2);line-height:1.5}
+/* DROPDOWN SELECT CELLS */
+.cell-select{position:relative}
+.custom-select{position:relative;display:inline-block;width:100%}
+.cs-trigger{display:flex;align-items:center;justify-content:space-between;gap:6px;cursor:pointer;border-radius:5px;padding:4px 8px;transition:background .12s;border:1px solid transparent;min-height:28px}
+.cs-trigger:hover{background:rgba(255,255,255,.05);border-color:var(--border2)}
+.cs-arrow{font-size:9px;color:var(--text3);transition:transform .15s;flex-shrink:0}
+.custom-select.open .cs-arrow{transform:rotate(180deg)}
+.cs-dropdown{position:absolute;top:calc(100% + 4px);left:0;z-index:300;background:#1a1a1a;border:1px solid var(--border2);border-radius:7px;min-width:160px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.5);opacity:0;transform:translateY(-4px);pointer-events:none;transition:all .14s}
+.custom-select.open .cs-dropdown{opacity:1;transform:translateY(0);pointer-events:all}
+.cs-option{padding:8px 12px;font-size:12px;cursor:pointer;transition:background .1s;display:flex;align-items:center;gap:8px;color:var(--text2)}
+.cs-option:hover{background:rgba(255,255,255,.06);color:var(--white)}
+.cs-option.selected{color:var(--white)}
 
-.post-right{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
-.status{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:600;padding:4px 10px;border-radius:4px;white-space:nowrap}
-.status .s-dot{width:6px;height:6px;border-radius:50%;background:currentColor}
-.st-idea {background:var(--s-idea-bg);border:1px solid var(--s-idea-b);color:var(--s-idea-t)}
-.st-ready{background:var(--s-ready-bg);border:1px solid var(--s-ready-b);color:var(--s-ready-t)}
-.st-prod {background:var(--s-prod-bg);border:1px solid var(--s-prod-b);color:var(--s-prod-t)}
-.st-done {background:var(--s-done-bg);border:1px solid var(--s-done-b);color:var(--s-done-t)}
-.st-pub  {background:var(--s-pub-bg);border:1px solid var(--s-pub-b);color:var(--s-pub-t)}
+/* BADGES */
+.badge{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:600;padding:3px 8px;border-radius:4px;white-space:nowrap}
+/* Status */
+.s-idea  {background:rgba(90,63,138,.22);border:1px solid rgba(124,91,181,.35);color:#c4a8f0}
+.s-tz    {background:rgba(192,154,74,.18);border:1px solid rgba(192,154,74,.38);color:#e0be78}
+.s-prod  {background:rgba(30,63,114,.22);border:1px solid rgba(42,84,153,.4);color:#88b2de}
+.s-done  {background:rgba(42,102,69,.2);border:1px solid rgba(42,102,69,.4);color:#7ad4a4}
+.s-pub   {background:rgba(168,32,53,.18);border:1px solid rgba(196,42,67,.38);color:#e8909a}
+/* Rubric */
+.r-life  {background:rgba(192,154,74,.15);border:1px solid rgba(192,154,74,.25);color:#e0be78}
+.r-prod  {background:rgba(42,102,69,.18);border:1px solid rgba(42,102,69,.3);color:#7ad4a4}
+.r-promo {background:rgba(168,32,53,.18);border:1px solid rgba(168,32,53,.3);color:#e8909a}
+.r-ugc   {background:rgba(90,63,138,.18);border:1px solid rgba(90,63,138,.3);color:#c4a8f0}
+.r-edu   {background:rgba(30,63,114,.18);border:1px solid rgba(30,63,114,.3);color:#88b2de}
+.r-bts   {background:rgba(80,60,20,.25);border:1px solid rgba(140,100,30,.3);color:#d4a860}
+.r-news  {background:rgba(50,50,50,.3);border:1px solid rgba(80,80,80,.3);color:#c0c0c0}
+.r-eng   {background:rgba(36,120,80,.18);border:1px solid rgba(36,120,80,.3);color:#80dfa8}
+/* Format */
+.f-post  {background:rgba(255,255,255,.06);border:1px solid var(--border2);color:var(--text2)}
+.f-car   {background:rgba(30,63,114,.12);border:1px solid rgba(30,63,114,.25);color:#88b2de}
+.f-reel  {background:rgba(168,32,53,.12);border:1px solid rgba(168,32,53,.25);color:#e8909a}
+.f-stor  {background:rgba(90,63,138,.12);border:1px solid rgba(90,63,138,.25);color:#c4a8f0}
+.f-info  {background:rgba(192,154,74,.1);border:1px solid rgba(192,154,74,.22);color:#e0be78}
+.f-vid   {background:rgba(42,102,69,.12);border:1px solid rgba(42,102,69,.25);color:#7ad4a4}
+/* Who */
+.w-k{background:var(--katya2);color:#fff;font-size:8px;letter-spacing:.1em;text-transform:uppercase;padding:2px 7px;border-radius:3px}
+.w-e{background:var(--erik2);color:#fff;font-size:8px;letter-spacing:.1em;text-transform:uppercase;padding:2px 7px;border-radius:3px}
+/* Platform */
+.p-vk {background:rgba(0,119,255,.15);border:1px solid rgba(0,119,255,.25);color:#6da8ff}
+.p-tg {background:rgba(36,161,222,.12);border:1px solid rgba(36,161,222,.2);color:#7fd8f8}
+.p-ig {background:rgba(192,74,120,.12);border:1px solid rgba(192,74,120,.2);color:#f0a0c0}
+.p-pin{background:rgba(189,8,28,.1);border:1px solid rgba(189,8,28,.2);color:#ff8090}
 
-.time-tag{font-size:10px;color:var(--text3);background:rgba(0,0,0,.25);border:1px solid var(--border);border-radius:4px;padding:3px 8px;white-space:nowrap}
+/* Asset checks */
+.asset-cell{display:flex;flex-direction:column;gap:4px}
+.asset-row{display:flex;align-items:center;gap:5px;font-size:10.5px;color:var(--text2)}
+.asset-check{width:16px;height:16px;border-radius:3px;border:1.5px solid rgba(192,154,74,.3);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:9px;transition:all .12s;flex-shrink:0}
+.asset-check.checked{background:rgba(42,102,69,.35);border-color:rgba(42,102,69,.6);color:#7ad4a4}
+.asset-check:hover{border-color:rgba(192,154,74,.6)}
 
-/* POST BODY */
-.post-body{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;border-top:1px solid var(--border)}
-.pb-cell{padding:11px 14px;border-right:1px solid var(--border)}
-.pb-cell:last-child{border-right:none}
-.pb-label{font-size:8.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--text3);margin-bottom:6px}
-.pb-val{font-size:12px;color:var(--text2);line-height:1.5}
+/* Platform tags multi */
+.plat-tags{display:flex;flex-wrap:wrap;gap:3px}
+.plat-toggle{font-size:9px;font-weight:700;padding:2px 7px;border-radius:3px;cursor:pointer;transition:opacity .12s;user-select:none}
+.plat-toggle.off{opacity:.3;filter:grayscale(.6)}
+.plat-toggle:hover{opacity:.85 !important}
 
-/* PLATFORM DOTS */
-.plats{display:flex;gap:4px;flex-wrap:wrap}
-.pd{font-size:9px;font-weight:700;padding:2px 7px;border-radius:3px}
-.pd-vk {background:rgba(0,119,255,.15);color:#6da8ff;border:1px solid rgba(0,119,255,.25)}
-.pd-tg {background:rgba(36,161,222,.12);color:#7fd8f8;border:1px solid rgba(36,161,222,.2)}
-.pd-ig {background:rgba(192,74,120,.12);color:#f0a0c0;border:1px solid rgba(192,74,120,.2)}
-.pd-pin{background:rgba(189,8,28,.1);color:#ff8090;border:1px solid rgba(189,8,28,.2)}
+/* Note */
+.note-cell{font-size:11px;color:var(--text3);font-style:italic;min-width:100px}
 
-/* WHO */
-.who-list{display:flex;flex-direction:column;gap:3px}
-.who{font-size:8px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:2px 7px;border-radius:3px;display:inline-block}
-.wk{background:var(--katya2);color:#fff}.we{background:var(--erik2);color:#fff}
+/* Row actions */
+.row-actions{display:flex;gap:4px;opacity:0;transition:opacity .12s}
+tr:hover .row-actions{opacity:1}
+.ra-btn{width:22px;height:22px;border-radius:4px;border:1px solid var(--border2);background:transparent;color:var(--text3);cursor:pointer;font-size:11px;display:flex;align-items:center;justify-content:center;transition:all .12s}
+.ra-btn:hover{background:rgba(255,255,255,.06);color:var(--white)}
+.ra-delete:hover{background:rgba(168,32,53,.2);border-color:rgba(168,32,53,.4);color:#e8909a}
 
-/* FORMAT TAG */
-.fmt{display:inline-flex;align-items:center;gap:5px;font-size:11px;color:var(--text2);background:rgba(255,255,255,.04);border:1px solid var(--border2);border-radius:4px;padding:3px 9px}
-.fmt i{font-size:13px;font-style:normal}
+/* Time picker */
+.time-input{background:transparent;border:none;color:var(--text3);font-size:11px;font-family:'Golos Text',sans-serif;cursor:pointer;outline:none;width:52px;padding:2px 4px;border-radius:3px;transition:background .12s}
+.time-input:hover{background:rgba(255,255,255,.05)}
+.time-input:focus{background:rgba(255,255,255,.07);color:var(--text)}
 
-/* ASSETS */
-.assets-row{display:flex;flex-direction:column;gap:4px}
-.asset-item{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--text2)}
-.asset-box{width:16px;height:16px;border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:9px;flex-shrink:0}
-.ab-ok  {background:rgba(42,102,69,.3);border:1px solid rgba(42,102,69,.5);color:#7ad4a4}
-.ab-no  {background:rgba(60,60,60,.25);border:1px solid rgba(80,80,80,.3);color:#666}
-.ab-wip {background:rgba(30,63,114,.25);border:1px solid rgba(42,84,153,.4);color:#88b2de}
+/* TOAST */
+.toast{position:fixed;bottom:24px;right:24px;background:#1a1a1a;border:1px solid rgba(42,102,69,.5);color:#7ad4a4;padding:10px 18px;border-radius:7px;font-size:12px;font-weight:500;z-index:9999;opacity:0;transform:translateY(8px);transition:all .25s;pointer-events:none}
+.toast.show{opacity:1;transform:translateY(0)}
 
-/* POST FOOTER (tasks) */
-.post-tasks{padding:10px 16px;background:rgba(0,0,0,.15);border-top:1px solid var(--border);display:flex;flex-direction:column;gap:5px}
-.task-item{display:flex;align-items:flex-start;gap:8px;font-size:11.5px;color:var(--text2);line-height:1.45}
-.task-box{width:14px;height:14px;border-radius:3px;border:1.5px solid rgba(192,154,74,.35);flex-shrink:0;margin-top:1px}
-.task-item strong{color:var(--text);font-weight:600}
-.task-item.done .task-box{background:rgba(42,102,69,.4);border-color:rgba(42,102,69,.6)}
-.task-item.done .task-box::after{content:'✓';display:flex;justify-content:center;align-items:center;width:100%;height:100%;font-size:8px;color:#7ad4a4}
-.task-item.done > span{color:var(--text3);text-decoration:line-through;text-decoration-color:rgba(90,80,72,.5)}
+/* EMPTY ROW */
+.empty-row td{text-align:center;padding:32px;color:var(--text3);font-style:italic;font-size:13px}
 
-/* NO POSTS */
-.no-post{padding:16px;background:rgba(0,0,0,.1);border:1px dashed var(--border2);border-radius:8px;text-align:center;font-size:11.5px;color:var(--text3);font-style:italic}
+/* Scrollable wrapper */
+.table-wrap{overflow-x:auto;border-radius:12px}
 
-/* FOOTER SUMMARY */
-.summary{margin-top:8px;background:var(--frame);border:1px solid var(--border);border-radius:10px;padding:16px 20px;display:flex;gap:28px;align-items:center;flex-wrap:wrap}
-.sum-block{display:flex;flex-direction:column;gap:3px}
-.sum-label{font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--text3)}
-.sum-val{font-family:'Unbounded',sans-serif;font-size:20px;font-weight:700;color:var(--white)}
-.sum-sub{font-size:10px;color:var(--text3)}
-.sum-divider{width:1px;height:40px;background:var(--border2)}
-.sum-row{display:flex;gap:12px;flex-wrap:wrap}
-.sr-item{display:flex;flex-direction:column;align-items:center;gap:2px;min-width:44px}
-.sr-val{font-size:15px;font-weight:700}
-.sr-lbl{font-size:9px;color:var(--text3)}
+/* Summary footer */
+.summary{margin-top:14px;background:var(--frame);border:1px solid var(--border);border-radius:10px;padding:14px 20px;display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+.sum-item{display:flex;flex-direction:column;gap:2px}
+.sum-label{font-size:8.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--text3)}
+.sum-val{font-family:'Unbounded',sans-serif;font-size:18px;font-weight:700;color:var(--white)}
+.sum-sep{width:1px;height:32px;background:var(--border2)}
+.sum-chips{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.sum-chip{font-size:10px;font-weight:600;padding:2px 9px;border-radius:4px}
 </style>
 </head>
 <body>
 
 <!-- TOPBAR -->
 <div class="topbar">
-  <div class="tb-left">
+  <div style="display:flex;align-items:center;gap:14px">
     <div class="tb-logo">Gray <span>Cardinal</span></div>
-    <div class="tb-sep"></div>
-    <div class="tb-title">Контент-план · 9–15 марта 2025</div>
+    <div style="width:1px;height:18px;background:var(--border2)"></div>
+    <div style="font-size:11px;color:var(--text3)">Контент-план</div>
   </div>
-  <div class="tb-right">
-    <span class="plat plat-vk">ВКонтакте</span>
-    <span class="plat plat-tg">Telegram</span>
-    <span class="plat plat-ig">Instagram</span>
-    <span class="plat plat-pin">Pinterest</span>
-  </div>
-</div>
-
-<!-- WEEK HERO -->
-<div class="week-hero">
-  <div class="wh-left">
-    <div class="wh-label">Подробный план недели</div>
-    <div class="wh-title">9 — 15 марта 2025</div>
-    <div class="wh-sub">Постпраздничная неделя · упор на продукт и вовлечение · 13 публикаций</div>
-  </div>
-  <div class="wh-stats">
-    <div class="ws"><div class="ws-val">13</div><div class="ws-lbl">Публикаций</div></div>
-    <div class="ws"><div class="ws-val">4</div><div class="ws-lbl">Платформы</div></div>
-    <div class="ws"><div class="ws-val">7</div><div class="ws-lbl">Рубрик</div></div>
-    <div class="ws"><div class="ws-val">5</div><div class="ws-lbl">Форматов</div></div>
+  <div class="tb-actions">
+    <button class="btn btn-reset" onclick="resetAll()">↺ Сбросить</button>
+    <button class="btn btn-save" onclick="saveData()">💾 Сохранить</button>
+    <button class="btn btn-add" onclick="addRow()">+ Строка</button>
   </div>
 </div>
 
-<!-- STATUS LEGEND -->
-<div class="status-bar">
-  <span class="sb-label">Статус:</span>
-  <div class="sl"><div class="sl-dot" style="background:var(--s-idea-t)"></div>Идея</div>
-  <div class="sl"><div class="sl-dot" style="background:var(--s-ready-t)"></div>ТЗ готово</div>
-  <div class="sl"><div class="sl-dot" style="background:var(--s-prod-t)"></div>В производстве</div>
-  <div class="sl"><div class="sl-dot" style="background:var(--s-done-t)"></div>Готово</div>
-  <div class="sl"><div class="sl-dot" style="background:var(--s-pub-t)"></div>Опубликовано</div>
+<!-- FILTERS -->
+<div class="filters">
+  <span class="filter-label">Фильтр:</span>
+  <select class="filter-select" id="filter-status" onchange="applyFilters()">
+    <option value="">Все статусы</option>
+    <option value="idea">Идея</option>
+    <option value="tz">ТЗ готово</option>
+    <option value="prod">В производстве</option>
+    <option value="done">Готово</option>
+    <option value="pub">Опубликовано</option>
+  </select>
+  <select class="filter-select" id="filter-rubric" onchange="applyFilters()">
+    <option value="">Все рубрики</option>
+    <option value="life">Lifestyle</option>
+    <option value="prod">Продукт</option>
+    <option value="promo">Акция</option>
+    <option value="ugc">UGC</option>
+    <option value="edu">Обучение</option>
+    <option value="bts">BTS</option>
+    <option value="news">Новости</option>
+    <option value="eng">Вовлечение</option>
+  </select>
+  <select class="filter-select" id="filter-who" onchange="applyFilters()">
+    <option value="">Все</option>
+    <option value="katya">Катя</option>
+    <option value="erik">Эрик</option>
+  </select>
+  <div class="filter-sep"></div>
+  <select class="filter-select" id="filter-week" onchange="applyFilters()">
+    <option value="">Все недели</option>
+    <option value="1">Неделя 1</option>
+    <option value="2">Неделя 2</option>
+    <option value="3">Неделя 3</option>
+    <option value="4">Неделя 4</option>
+  </select>
+  <div style="margin-left:auto;font-size:10px;color:var(--text3)" id="row-count"></div>
 </div>
 
-<div class="wrap">
-
-  <!-- ══ ВОСКРЕСЕНЬЕ 9 ══ -->
-  <div class="day-block">
-    <div class="day-head">
-      <div class="day-circle weekend">
-        <div class="day-num">9</div>
-        <div class="day-name">вс</div>
-      </div>
-      <div class="day-info">
-        <div class="day-title">Воскресенье</div>
-        <div class="day-meta">Постпраздничный день · аудитория активна · органический охват выше</div>
-      </div>
-      <div class="day-sep-line"></div>
-      <div class="day-count">2 публикации</div>
-    </div>
-    <div class="posts">
-
-      <div class="post-card">
-        <div class="post-top">
-          <div class="post-top-left">
-            <div class="post-meta-row">
-              <span class="post-num">01</span>
-              <span class="rubric rub-lifestyle">Lifestyle</span>
-            </div>
-            <div class="post-title">Воскресный вечер на диване — самое правильное решение</div>
-            <div class="post-desc">Тёплая атмосферная фотография: плед, книга, диван. Лёгкий текст без продаж — настроение и близость к аудитории. Хэштеги: #серыйкардинал #уютдома</div>
-          </div>
-          <div class="post-right">
-            <span class="status st-ready"><span class="s-dot"></span>ТЗ готово</span>
-            <span class="time-tag">⏰ 12:00</span>
-          </div>
-        </div>
-        <div class="post-body">
-          <div class="pb-cell">
-            <div class="pb-label">Формат</div>
-            <div class="pb-val"><span class="fmt"><i>📄</i>Пост</span></div>
-          </div>
-          <div class="pb-cell">
-            <div class="pb-label">Платформы</div>
-            <div class="pb-val">
-              <div class="plats">
-                <span class="pd pd-vk">ВК</span>
-                <span class="pd pd-tg">TG</span>
-                <span class="pd pd-ig">IG</span>
-              </div>
-            </div>
-          </div>
-          <div class="pb-cell">
-            <div class="pb-label">Активы</div>
-            <div class="assets-row">
-              <div class="asset-item"><div class="asset-box ab-ok">✓</div>Текст готов</div>
-              <div class="asset-item"><div class="asset-box ab-wip">…</div>Фото — в работе</div>
-            </div>
-          </div>
-          <div class="pb-cell">
-            <div class="pb-label">Кто</div>
-            <div class="who-list"><span class="who we">Эрик</span><span class="who wk">Катя</span></div>
-          </div>
-        </div>
-        <div class="post-tasks">
-          <div class="task-item done"><div class="task-box"></div><span><strong>Эрик:</strong> написать текст 800–1200 зн., подобрать хэштеги</span></div>
-          <div class="task-item"><div class="task-box"></div><span><strong>Катя:</strong> подобрать lifestyle-фото из архива или поставить задачу на ретушь</span></div>
-          <div class="task-item"><div class="task-box"></div><span><strong>Катя:</strong> сверстать в шаблон IG, добавить лого</span></div>
-          <div class="task-item"><div class="task-box"></div><span><strong>Эрик:</strong> запланировать публикацию в SMMplanner на 12:00</span></div>
-        </div>
-      </div>
-
-      <div class="post-card">
-        <div class="post-top">
-          <div class="post-top-left">
-            <div class="post-meta-row">
-              <span class="post-num">02</span>
-              <span class="rubric rub-product">Продукт</span>
-            </div>
-            <div class="post-title">Диван «Монако» — цвета весны 2025</div>
-            <div class="post-desc">Рендеры дивана в 4 весенних расцветках: пыльная роза, шалфей, карамель, молочный. Акцент на новые ткани. Без цены — ведём в директ</div>
-          </div>
-          <div class="post-right">
-            <span class="status st-prod"><span class="s-dot"></span>В производстве</span>
-            <span class="time-tag">⏰ 19:00</span>
-          </div>
-        </div>
-        <div class="post-body">
-          <div class="pb-cell">
-            <div class="pb-label">Формат</div>
-            <div class="pb-val"><span class="fmt"><i>🖼</i>Карусель</span></div>
-          </div>
-          <div class="pb-cell">
-            <div class="pb-label">Платформы</div>
-            <div class="pb-val">
-              <div class="plats">
-                <span class="pd pd-ig">IG</span>
-                <span class="pd pd-vk">ВК</span>
-                <span class="pd pd-pin">PIN</span>
-              </div>
-            </div>
-          </div>
-          <div class="pb-cell">
-            <div class="pb-label">Активы</div>
-            <div class="assets-row">
-              <div class="asset-item"><div class="asset-box ab-ok">✓</div>Текст готов</div>
-              <div class="asset-item"><div class="asset-box ab-wip">…</div>4 рендера — у подрядчика</div>
-            </div>
-          </div>
-          <div class="pb-cell">
-            <div class="pb-label">Кто</div>
-            <div class="who-list"><span class="who wk">Катя</span><span class="who we">Эрик</span></div>
-          </div>
-        </div>
-        <div class="post-tasks">
-          <div class="task-item done"><div class="task-box"></div><span><strong>Эрик:</strong> написать подписи к каждому слайду (2–3 строки на цвет)</span></div>
-          <div class="task-item"><div class="task-box"></div><span><strong>Катя:</strong> принять 4 рендера от подрядчика, проверить на соответствие бренд-коду</span></div>
-          <div class="task-item"><div class="task-box"></div><span><strong>Катя:</strong> собрать карусель в Figma: обложка + 4 слайда + финальный CTA-слайд</span></div>
-          <div class="task-item"><div class="task-box"></div><span><strong>Эрик:</strong> адаптировать обложку под Pinterest (вертикальный формат 1000×1500)</span></div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ══ ПОНЕДЕЛЬНИК 10 ══ -->
-  <div class="day-block">
-    <div class="day-head">
-      <div class="day-circle weekday">
-        <div class="day-num">10</div>
-        <div class="day-name">пн</div>
-      </div>
-      <div class="day-info">
-        <div class="day-title">Понедельник</div>
-        <div class="day-meta">Начало рабочей недели · высокая активность аудитории утром</div>
-      </div>
-      <div class="day-sep-line"></div>
-      <div class="day-count">2 публикации</div>
-    </div>
-    <div class="posts">
-
-      <div class="post-card">
-        <div class="post-top">
-          <div class="post-top-left">
-            <div class="post-meta-row">
-              <span class="post-num">03</span>
-              <span class="rubric rub-edu">Обучение</span>
-            </div>
-            <div class="post-title">Как выбрать диван: 5 вопросов до похода в магазин</div>
-            <div class="post-desc">Карусель-инструкция. Слайд 1 — обложка-крючок. Слайды 2–6 — по одному вопросу: размер / наполнитель / ткань / механизм / цвет. Слайд 7 — итог с призывом писать в директ</div>
-          </div>
-          <div class="post-right">
-            <span class="status st-ready"><span class="s-dot"></span>ТЗ готово</span>
-            <span class="time-tag">⏰ 10:00</span>
-          </div>
-        </div>
-        <div class="post-body">
-          <div class="pb-cell">
-            <div class="pb-label">Формат</div>
-            <div class="pb-val"><span class="fmt"><i>🖼</i>Карусель</span></div>
-          </div>
-          <div class="pb-cell">
-            <div class="pb-label">Платформы</div>
-            <div class="pb-val">
-              <div class="plats">
-                <span class="pd pd-vk">ВК</span>
-                <span class="pd pd-tg">TG</span>
-                <span class="pd pd-ig">IG</span>
-              </div>
-            </div>
-          </div>
-          <div class="pb-cell">
-            <div class="pb-label">Активы</div>
-            <div class="assets-row">
-              <div class="asset-item"><div class="asset-box ab-ok">✓</div>Текст готов</div>
-              <div class="asset-item"><div class="asset-box ab-no">—</div>Дизайн 7 слайдов — нужен</div>
-            </div>
-          </div>
-          <div class="pb-cell">
-            <div class="pb-label">Кто</div>
-            <div class="who-list"><span class="who wk">Катя</span><span class="who we">Эрик</span></div>
-          </div>
-        </div>
-        <div class="post-tasks">
-          <div class="task-item done"><div class="task-box"></div><span><strong>Эрик:</strong> тексты для каждого слайда — максимум 40 слов, тезисно</span></div>
-          <div class="task-item"><div class="task-box"></div><span><strong>Катя:</strong> разработать шаблон карусели в Figma — 7 слайдов с единым стилем</span></div>
-          <div class="task-item"><div class="task-box"></div><span><strong>Катя:</strong> QC — проверить читаемость на мобильном</span></div>
-          <div class="task-item"><div class="task-box"></div><span><strong>Эрик:</strong> адаптировать текст поста для Telegram (без слайдов — только тезисы + ссылка)</span></div>
-        </div>
-      </div>
-
-      <div class="post-card">
-        <div class="post-top">
-          <div class="post-top-left">
-            <div class="post-meta-row">
-              <span class="post-num">04</span>
-              <span class="rubric rub-bts">BTS</span>
-            </div>
-            <div class="post-title">Как мы делаем рендер: от эскиза до финального изображения</div>
-            <div class="post-desc">Сторис-серия из 6 слайдов. Катя показывает процесс в Blender и Figma. Скриншоты этапов, закулисье дизайна. Заканчивается финальным рендером и вопросом аудитории</div>
-          </div>
-          <div class="post-right">
-            <span class="status st-idea"><span class="s-dot"></span>Идея</span>
-            <span class="time-tag">⏰ 18:00</span>
-          </div>
-        </div>
-        <div class="post-body">
-          <div class="pb-cell">
-            <div class="pb-label">Формат</div>
-            <div class="pb-val"><span class="fmt"><i>⬜</i>Сторис ×6</span></div>
-          </div>
-          <div class="pb-cell">
-            <div class="pb-label">Платформы</div>
-            <div class="pb-val">
-              <div class="plats">
-                <span class="pd pd-ig">IG</span>
-              </div>
-            </div>
-          </div>
-          <div class="pb-cell">
-            <div class="pb-label">Активы</div>
-            <div class="assets-row">
-              <div class="asset-item"><div class="asset-box ab-no">—</div>Текст (подписи) — нужен</div>
-              <div class="asset-item"><div class="asset-box ab-no">—</div>6 скриншотов процесса — нужны</div>
-            </div>
-          </div>
-          <div class="pb-cell">
-            <div class="pb-label">Кто</div>
-            <div class="who-list"><span class="who wk">Катя</span></div>
-          </div>
-        </div>
-        <div class="post-tasks">
-          <div class="task-item"><div class="task-box"></div><span><strong>Катя:</strong> снять скриншоты 6 этапов работы в Blender и Figma</span></div>
-          <div class="task-item"><div class="task-box"></div><span><strong>Катя:</strong> добавить короткие подписи к каждому слайду (1–2 строки)</span></div>
-          <div class="task-item"><div class="task-box"></div><span><strong>Катя:</strong> на последнем слайде — опрос «Хотите видеть больше такого контента?»</span></div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ══ ВТОРНИК 11 ══ -->
-  <div class="day-block">
-    <div class="day-head">
-      <div class="day-circle weekday">
-        <div class="day-num">11</div>
-        <div class="day-name">вт</div>
-      </div>
-      <div class="day-info">
-        <div class="day-title">Вторник</div>
-        <div class="day-meta">Средняя активность · подходит для продуктовых постов</div>
-      </div>
-      <div class="day-sep-line"></div>
-      <div class="day-count">1 публикация</div>
-    </div>
-    <div class="posts">
-
-      <div class="post-card">
-        <div class="post-top">
-          <div class="post-top-left">
-            <div class="post-meta-row">
-              <span class="post-num">05</span>
-              <span class="rubric rub-product">Продукт</span>
-            </div>
-            <div class="post-title">Кровать «Берлин» — детали, которые замечаешь не сразу</div>
-            <div class="post-desc">Видеоролик 25–30 сек: макрофото обивки, ножек, швов изголовья. Никакого текста — только музыка и детали. В подписи — лаконичное описание материалов и призыв смотреть полный каталог</div>
-          </div>
-          <div class="post-right">
-            <span class="status st-idea"><span class="s-dot"></span>Идея</span>
-            <span class="time-tag">⏰ 14:00</span>
-          </div>
-        </div>
-        <div class="post-body">
-          <div class="pb-cell">
-            <div class="pb-label">Формат</div>
-            <div class="pb-val"><span class="fmt"><i>▶</i>Видео 30 сек</span></div>
-          </div>
-          <div class="pb-cell">
-            <div class="pb-label">Платформы</div>
-            <div class="pb-val">
-              <div class="plats">
-                <span class="pd pd-ig">IG</span>
-                <span class="pd pd-vk">ВК</span>
-              </div>
-            </div>
-          </div>
-          <div class="pb-cell">
-            <div class="pb-label">Активы</div>
-            <div class="assets-row">
-              <div class="asset-item"><div class="asset-box ab-no">—</div>Текст подписи — нужен</div>
-              <div class="asset-item"><div class="asset-box ab-no">—</div>Видеосъёмка — нужна</div>
-            </div>
-          </div>
-          <div class="pb-cell">
-            <div class="pb-label">Кто</div>
-            <div class="who-list"><span class="who we">Эрик</span><span class="who wk">Катя</span></div>
-          </div>
-        </div>
-        <div class="post-tasks">
-          <div class="task-item"><div class="task-box"></div><span><strong>Эрик:</strong> организовать съёмку макро-деталей кровати (оператор или своими силами)</span></div>
-          <div class="task-item"><div class="task-box"></div><span><strong>Эрик:</strong> смонтировать ролик 25–30 сек, добавить фоновую музыку без слов</span></div>
-          <div class="task-item"><div class="task-box"></div><span><strong>Эрик:</strong> написать подпись: 3–4 строки + хэштеги</span></div>
-          <div class="task-item"><div class="task-box"></div><span><strong>Катя:</strong> QC видео — соответствие цвета, бренд-код, обложка ролика</span></div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ══ СРЕДА 12 ══ -->
-  <div class="day-block">
-    <div class="day-head">
-      <div class="day-circle weekday">
-        <div class="day-num">12</div>
-        <div class="day-name">ср</div>
-      </div>
-      <div class="day-info">
-        <div class="day-title">Среда</div>
-        <div class="day-meta">Пик активности середины недели · UGC и вовлечение</div>
-      </div>
-      <div class="day-sep-line"></div>
-      <div class="day-count">2 публикации</div>
-    </div>
-    <div class="posts">
-
-      <div class="post-card">
-        <div class="post-top">
-          <div class="post-top-left">
-            <div class="post-meta-row">
-              <span class="post-num">06</span>
-              <span class="rubric rub-ugc">UGC</span>
-            </div>
-            <div class="post-title">Ваш интерьер с нашим диваном — реальные фото покупателей</div>
-            <div class="post-desc">Карусель из 4 реальных фото клиентов с комментариями. Короткая цитата от каждого. Финальный слайд — призыв прислать своё фото и получить скидку 5% на следующую покупку</div>
-          </div>
-          <div class="post-right">
-            <span class="status st-idea"><span class="s-dot"></span>Идея</span>
-            <span class="time-tag">⏰ 11:00</span>
-          </div>
-        </div>
-        <div class="post-body">
-          <div class="pb-cell">
-            <div class="pb-label">Формат</div>
-            <div class="pb-val"><span class="fmt"><i>🖼</i>Карусель</span></div>
-          </div>
-          <div class="pb-cell">
-            <div class="pb-label">Платформы</div>
-            <div class="pb-val">
-              <div class="plats">
-                <span class="pd pd-vk">ВК</span>
-                <span class="pd pd-tg">TG</span>
-                <span class="pd pd-ig">IG</span>
-              </div>
-            </div>
-          </div>
-          <div class="pb-cell">
-            <div class="pb-label">Активы</div>
-            <div class="assets-row">
-              <div class="asset-item"><div class="asset-box ab-no">—</div>Текст — нужен</div>
-              <div class="asset-item"><div class="asset-box ab-no">—</div>4 клиентских фото — запросить у Александры</div>
-            </div>
-          </div>
-          <div class="pb-cell">
-            <div class="pb-label">Кто</div>
-            <div class="who-list"><span class="who we">Эрик</span><span class="who wk">Катя</span></div>
-          </div>
-        </div>
-        <div class="post-tasks">
-          <div class="task-item"><div class="task-box"></div><span><strong>Эрик:</strong> запросить у Александры 4–5 фото от клиентов с разрешением на публикацию</span></div>
-          <div class="task-item"><div class="task-box"></div><span><strong>Эрик:</strong> написать короткие цитаты от лица клиентов + общую подпись поста</span></div>
-          <div class="task-item"><div class="task-box"></div><span><strong>Катя:</strong> обработать фото (яркость, цвет), добавить рамку и цитату в фирменном стиле</span></div>
-          <div class="task-item"><div class="task-box"></div><span><strong>Эрик:</strong> уточнить у Александры условие акции (5% — согласована ли скидка?)</span></div>
-        </div>
-      </div>
-
-      <div class="post-card">
-        <div class="post-top">
-          <div class="post-top-left">
-            <div class="post-meta-row">
-              <span class="post-num">07</span>
-              <span class="rubric rub-engage">Вовлечение</span>
-            </div>
-            <div class="post-title">Какой цвет дивана вы бы выбрали для своей гостиной?</div>
-            <div class="post-desc">Интерактивный пост-опрос. 4 рендера дивана в разных цветах. В подписи — вопрос и варианты ответа в комментариях. Цель: вовлечение + сбор данных о предпочтениях</div>
-          </div>
-          <div class="post-right">
-            <span class="status st-idea"><span class="s-dot"></span>Идея</span>
-            <span class="time-tag">⏰ 20:00</span>
-          </div>
-        </div>
-        <div class="post-body">
-          <div class="pb-cell">
-            <div class="pb-label">Формат</div>
-            <div class="pb-val"><span class="fmt"><i>📄</i>Пост + опрос</span></div>
-          </div>
-          <div class="pb-cell">
-            <div class="pb-label">Платформы</div>
-            <div class="pb-val">
-              <div class="plats">
-                <span class="pd pd-vk">ВК</span>
-                <span class="pd pd-ig">IG</span>
-              </div>
-            </div>
-          </div>
-          <div class="pb-cell">
-            <div class="pb-label">Активы</div>
-            <div class="assets-row">
-              <div class="asset-item"><div class="asset-box ab-no">—</div>Текст — нужен</div>
-              <div class="asset-item"><div class="asset-box ab-no">—</div>4 рендера цветов — из архива Кати</div>
-            </div>
-          </div>
-          <div class="pb-cell">
-            <div class="pb-label">Кто</div>
-            <div class="who-list"><span class="who we">Эрик</span><span class="who wk">Катя</span></div>
-          </div>
-        </div>
-        <div class="post-tasks">
-          <div class="task-item"><div class="task-box"></div><span><strong>Катя:</strong> подобрать 4 рендера из архива — разные цвета одной модели</span></div>
-          <div class="task-item"><div class="task-box"></div><span><strong>Эрик:</strong> написать вовлекающую подпись + добавить опрос ВКонтакте</span></div>
-          <div class="task-item"><div class="task-box"></div><span><strong>Эрик:</strong> в IG Stories — интерактивный стикер с голосованием на следующий день</span></div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ══ ЧЕТВЕРГ 13 ══ -->
-  <div class="day-block">
-    <div class="day-head">
-      <div class="day-circle weekday">
-        <div class="day-num">13</div>
-        <div class="day-name">чт</div>
-      </div>
-      <div class="day-info">
-        <div class="day-title">Четверг</div>
-        <div class="day-meta">Продуктивный день · хорошо заходят образовательные форматы</div>
-      </div>
-      <div class="day-sep-line"></div>
-      <div class="day-count">2 публикации</div>
-    </div>
-    <div class="posts">
-
-      <div class="post-card">
-        <div class="post-top">
-          <div class="post-top-left">
-            <div class="post-meta-row">
-              <span class="post-num">08</span>
-              <span class="rubric rub-edu">Обучение</span>
-            </div>
-            <div class="post-title">Диван-книжка vs еврокнижка: в чём разница и что выбрать</div>
-            <div class="post-desc">Инфографика с анимированным объяснением механизмов. Простым языком — для тех, кто никогда не разбирался. Итоговая рекомендация зависит от задачи</div>
-          </div>
-          <div class="post-right">
-            <span class="status st-idea"><span class="s-dot"></span>Идея</span>
-            <span class="time-tag">⏰ 10:00</span>
-          </div>
-        </div>
-        <div class="post-body">
-          <div class="pb-cell">
-            <div class="pb-label">Формат</div>
-            <div class="pb-val"><span class="fmt"><i>🖼</i>Инфографика</span></div>
-          </div>
-          <div class="pb-cell">
-            <div class="pb-label">Платформы</div>
-            <div class="pb-val">
-              <div class="plats">
-                <span class="pd pd-vk">ВК</span>
-                <span class="pd pd-tg">TG</span>
-              </div>
-            </div>
-          </div>
-          <div class="pb-cell">
-            <div class="pb-label">Активы</div>
-            <div class="assets-row">
-              <div class="asset-item"><div class="asset-box ab-no">—</div>Текст — нужен</div>
-              <div class="asset-item"><div class="asset-box ab-no">—</div>Инфографика — нужна</div>
-            </div>
-          </div>
-          <div class="pb-cell">
-            <div class="pb-label">Кто</div>
-            <div class="who-list"><span class="who we">Эрик</span><span class="who wk">Катя</span></div>
-          </div>
-        </div>
-        <div class="post-tasks">
-          <div class="task-item"><div class="task-box"></div><span><strong>Эрик:</strong> написать объяснение простым языком: 2–3 предложения на каждый тип</span></div>
-          <div class="task-item"><div class="task-box"></div><span><strong>Катя:</strong> нарисовать схему механизмов в Figma — понятно и на уровне иллюстрации</span></div>
-          <div class="task-item"><div class="task-box"></div><span><strong>Катя:</strong> QC — читаемость, пропорции, соответствие стилю бренда</span></div>
-        </div>
-      </div>
-
-      <div class="post-card">
-        <div class="post-top">
-          <div class="post-top-left">
-            <div class="post-meta-row">
-              <span class="post-num">09</span>
-              <span class="rubric rub-lifestyle">Lifestyle</span>
-            </div>
-            <div class="post-title">Весна дома: меняем текстиль и настроение</div>
-            <div class="post-desc">Рилс 15–20 сек. Быстрая «трансформация» интерьера: меняем тёмные подушки и плед на светлые весенние. Акцент — диван как основа, текстиль — настройка</div>
-          </div>
-          <div class="post-right">
-            <span class="status st-idea"><span class="s-dot"></span>Идея</span>
-            <span class="time-tag">⏰ 18:30</span>
-          </div>
-        </div>
-        <div class="post-body">
-          <div class="pb-cell">
-            <div class="pb-label">Формат</div>
-            <div class="pb-val"><span class="fmt"><i>▶</i>Рилс 20 сек</span></div>
-          </div>
-          <div class="pb-cell">
-            <div class="pb-label">Платформы</div>
-            <div class="pb-val">
-              <div class="plats">
-                <span class="pd pd-ig">IG</span>
-                <span class="pd pd-vk">ВК</span>
-              </div>
-            </div>
-          </div>
-          <div class="pb-cell">
-            <div class="pb-label">Активы</div>
-            <div class="assets-row">
-              <div class="asset-item"><div class="asset-box ab-no">—</div>Подпись — нужна</div>
-              <div class="asset-item"><div class="asset-box ab-no">—</div>Видеосъёмка — нужна</div>
-            </div>
-          </div>
-          <div class="pb-cell">
-            <div class="pb-label">Кто</div>
-            <div class="who-list"><span class="who we">Эрик</span></div>
-          </div>
-        </div>
-        <div class="post-tasks">
-          <div class="task-item"><div class="task-box"></div><span><strong>Эрик:</strong> организовать съёмку: диван + 2 варианта текстиля (тёмный → светлый)</span></div>
-          <div class="task-item"><div class="task-box"></div><span><strong>Эрик:</strong> смонтировать под трендовый звук из IG, добавить переход</span></div>
-          <div class="task-item"><div class="task-box"></div><span><strong>Катя:</strong> QC итогового ролика — цвет и свет соответствуют бренду</span></div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ══ ПЯТНИЦА 14 ══ -->
-  <div class="day-block">
-    <div class="day-head">
-      <div class="day-circle weekday">
-        <div class="day-num">14</div>
-        <div class="day-name">пт</div>
-      </div>
-      <div class="day-info">
-        <div class="day-title">Пятница</div>
-        <div class="day-meta">День перед выходными · аудитория в приподнятом настроении · хорошо для анонсов</div>
-      </div>
-      <div class="day-sep-line"></div>
-      <div class="day-count">2 публикации</div>
-    </div>
-    <div class="posts">
-
-      <div class="post-card">
-        <div class="post-top">
-          <div class="post-top-left">
-            <div class="post-meta-row">
-              <span class="post-num">10</span>
-              <span class="rubric rub-product">Продукт</span>
-            </div>
-            <div class="post-title">Кресло «Лион» — для тех, кто ценит качество в деталях</div>
-            <div class="post-desc">Пост с 3 фотографиями: общий вид, деталь ножки, деталь шва. Текст — про то, что хорошая мебель не требует объяснений. В конце — цена и ссылка на каталог</div>
-          </div>
-          <div class="post-right">
-            <span class="status st-idea"><span class="s-dot"></span>Идея</span>
-            <span class="time-tag">⏰ 12:00</span>
-          </div>
-        </div>
-        <div class="post-body">
-          <div class="pb-cell">
-            <div class="pb-label">Формат</div>
-            <div class="pb-val"><span class="fmt"><i>📄</i>Пост + 3 фото</span></div>
-          </div>
-          <div class="pb-cell">
-            <div class="pb-label">Платформы</div>
-            <div class="pb-val">
-              <div class="plats">
-                <span class="pd pd-vk">ВК</span>
-                <span class="pd pd-ig">IG</span>
-                <span class="pd pd-pin">PIN</span>
-              </div>
-            </div>
-          </div>
-          <div class="pb-cell">
-            <div class="pb-label">Активы</div>
-            <div class="assets-row">
-              <div class="asset-item"><div class="asset-box ab-no">—</div>Текст — нужен</div>
-              <div class="asset-item"><div class="asset-box ab-no">—</div>3 рендера/фото — нужны</div>
-            </div>
-          </div>
-          <div class="pb-cell">
-            <div class="pb-label">Кто</div>
-            <div class="who-list"><span class="who wk">Катя</span><span class="who we">Эрик</span></div>
-          </div>
-        </div>
-        <div class="post-tasks">
-          <div class="task-item"><div class="task-box"></div><span><strong>Катя:</strong> подготовить 3 рендера кресла «Лион» — общий + 2 детальных</span></div>
-          <div class="task-item"><div class="task-box"></div><span><strong>Эрик:</strong> написать текст в философском ключе, без агрессивных продаж</span></div>
-          <div class="task-item"><div class="task-box"></div><span><strong>Эрик:</strong> уточнить актуальную цену у Александры перед публикацией</span></div>
-        </div>
-      </div>
-
-      <div class="post-card">
-        <div class="post-top">
-          <div class="post-top-left">
-            <div class="post-meta-row">
-              <span class="post-num">11</span>
-              <span class="rubric rub-news">Новости</span>
-            </div>
-            <div class="post-title">На следующей неделе — кое-что интересное 👀</div>
-            <div class="post-desc">Интригующий анонс новой коллекции или акции без раскрытия деталей. Сторис — 3 слайда: «скоро», намёк, дата. Цель — поднять ожидание перед выходными</div>
-          </div>
-          <div class="post-right">
-            <span class="status st-idea"><span class="s-dot"></span>Идея</span>
-            <span class="time-tag">⏰ 20:00</span>
-          </div>
-        </div>
-        <div class="post-body">
-          <div class="pb-cell">
-            <div class="pb-label">Формат</div>
-            <div class="pb-val"><span class="fmt"><i>⬜</i>Сторис ×3</span></div>
-          </div>
-          <div class="pb-cell">
-            <div class="pb-label">Платформы</div>
-            <div class="pb-val">
-              <div class="plats">
-                <span class="pd pd-ig">IG</span>
-                <span class="pd pd-tg">TG</span>
-              </div>
-            </div>
-          </div>
-          <div class="pb-cell">
-            <div class="pb-label">Активы</div>
-            <div class="assets-row">
-              <div class="asset-item"><div class="asset-box ab-no">—</div>Текст — нужен</div>
-              <div class="asset-item"><div class="asset-box ab-no">—</div>Тизер-визуал — нужен</div>
-            </div>
-          </div>
-          <div class="pb-cell">
-            <div class="pb-label">Кто</div>
-            <div class="who-list"><span class="who wk">Катя</span><span class="who we">Эрик</span></div>
-          </div>
-        </div>
-        <div class="post-tasks">
-          <div class="task-item"><div class="task-box"></div><span><strong>Эрик:</strong> уточнить у Александры — что анонсируем (коллекция? акция? мероприятие?)</span></div>
-          <div class="task-item"><div class="task-box"></div><span><strong>Катя:</strong> сделать тизер-визуал с размытием или фрагментом продукта</span></div>
-          <div class="task-item"><div class="task-box"></div><span><strong>Эрик:</strong> написать интригующую подпись без спойлеров</span></div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ══ СУББОТА 15 ══ -->
-  <div class="day-block">
-    <div class="day-head">
-      <div class="day-circle weekend">
-        <div class="day-num">15</div>
-        <div class="day-name">сб</div>
-      </div>
-      <div class="day-info">
-        <div class="day-title">Суббота</div>
-        <div class="day-meta">Выходной день · пик просмотров в 11:00–13:00 и 19:00–22:00</div>
-      </div>
-      <div class="day-sep-line"></div>
-      <div class="day-count">2 публикации</div>
-    </div>
-    <div class="posts">
-
-      <div class="post-card">
-        <div class="post-top">
-          <div class="post-top-left">
-            <div class="post-meta-row">
-              <span class="post-num">12</span>
-              <span class="rubric rub-lifestyle">Lifestyle</span>
-            </div>
-            <div class="post-title">Суббота создана для того, чтобы наконец выспаться</div>
-            <div class="post-desc">Атмосферное фото кровати «Берлин» — утренний свет, смятые простыни, кофе на тумбочке. Минимум текста. Передаём ощущение, а не продаём функцию</div>
-          </div>
-          <div class="post-right">
-            <span class="status st-idea"><span class="s-dot"></span>Идея</span>
-            <span class="time-tag">⏰ 11:00</span>
-          </div>
-        </div>
-        <div class="post-body">
-          <div class="pb-cell">
-            <div class="pb-label">Формат</div>
-            <div class="pb-val"><span class="fmt"><i>📄</i>Пост</span></div>
-          </div>
-          <div class="pb-cell">
-            <div class="pb-label">Платформы</div>
-            <div class="pb-val">
-              <div class="plats">
-                <span class="pd pd-ig">IG</span>
-                <span class="pd pd-pin">PIN</span>
-                <span class="pd pd-tg">TG</span>
-              </div>
-            </div>
-          </div>
-          <div class="pb-cell">
-            <div class="pb-label">Активы</div>
-            <div class="assets-row">
-              <div class="asset-item"><div class="asset-box ab-no">—</div>Текст — нужен</div>
-              <div class="asset-item"><div class="asset-box ab-no">—</div>Lifestyle-фото — нужно</div>
-            </div>
-          </div>
-          <div class="pb-cell">
-            <div class="pb-label">Кто</div>
-            <div class="who-list"><span class="who we">Эрик</span></div>
-          </div>
-        </div>
-        <div class="post-tasks">
-          <div class="task-item"><div class="task-box"></div><span><strong>Эрик:</strong> снять утреннее lifestyle-фото кровати с реквизитом (кофе, книга, свет)</span></div>
-          <div class="task-item"><div class="task-box"></div><span><strong>Эрик:</strong> написать 2–3 строки + хэштеги. Тон — тёплый, ненавязчивый</span></div>
-          <div class="task-item"><div class="task-box"></div><span><strong>Катя:</strong> QC цветокоррекции фото</span></div>
-        </div>
-      </div>
-
-      <div class="post-card">
-        <div class="post-top">
-          <div class="post-top-left">
-            <div class="post-meta-row">
-              <span class="post-num">13</span>
-              <span class="rubric rub-promo">Акция</span>
-            </div>
-            <div class="post-title">Только до конца марта: скидка 10% на кресла и пуфы</div>
-            <div class="post-desc">Промо-пост с яркой карточкой. Чёткие условия: что входит, срок, промокод или ссылка. Акцент на ограниченность предложения. Дополнительно — сторис с отсчётом</div>
-          </div>
-          <div class="post-right">
-            <span class="status st-idea"><span class="s-dot"></span>Идея</span>
-            <span class="time-tag">⏰ 19:00</span>
-          </div>
-        </div>
-        <div class="post-body">
-          <div class="pb-cell">
-            <div class="pb-label">Формат</div>
-            <div class="pb-val"><span class="fmt"><i>📄</i>Пост + сторис</span></div>
-          </div>
-          <div class="pb-cell">
-            <div class="pb-label">Платформы</div>
-            <div class="pb-val">
-              <div class="plats">
-                <span class="pd pd-vk">ВК</span>
-                <span class="pd pd-tg">TG</span>
-                <span class="pd pd-ig">IG</span>
-              </div>
-            </div>
-          </div>
-          <div class="pb-cell">
-            <div class="pb-label">Активы</div>
-            <div class="assets-row">
-              <div class="asset-item"><div class="asset-box ab-no">—</div>Текст — нужен</div>
-              <div class="asset-item"><div class="asset-box ab-no">—</div>Промо-карточка — нужна</div>
-            </div>
-          </div>
-          <div class="pb-cell">
-            <div class="pb-label">Кто</div>
-            <div class="who-list"><span class="who wk">Катя</span><span class="who we">Эрик</span></div>
-          </div>
-        </div>
-        <div class="post-tasks">
-          <div class="task-item"><div class="task-box"></div><span><strong>Эрик:</strong> согласовать условия акции с Александрой (% скидки, что входит, промокод)</span></div>
-          <div class="task-item"><div class="task-box"></div><span><strong>Катя:</strong> сделать промо-карточку в фирменном стиле с ценой и сроком</span></div>
-          <div class="task-item"><div class="task-box"></div><span><strong>Эрик:</strong> написать продающий текст с ограниченностью и призывом к действию</span></div>
-          <div class="task-item"><div class="task-box"></div><span><strong>Катя:</strong> сделать сторис с таймером обратного отсчёта</span></div>
-          <div class="task-item"><div class="task-box"></div><span><strong>Эрик:</strong> настроить таргет на пост (бюджет и аудитория — согласовать с Александрой)</span></div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- SUMMARY -->
-  <div class="summary">
-    <div class="sum-block">
-      <div class="sum-label">Итого за неделю</div>
-      <div class="sum-val">13</div>
-      <div class="sum-sub">публикаций · 9–15 марта</div>
-    </div>
-    <div class="sum-divider"></div>
-    <div class="sum-block">
-      <div class="sum-label">По рубрикам</div>
-      <div class="sum-row">
-        <div class="sr-item"><div class="sr-val" style="color:#7ad4a4">3</div><div class="sr-lbl">Продукт</div></div>
-        <div class="sr-item"><div class="sr-val" style="color:var(--gold2)">3</div><div class="sr-lbl">Lifestyle</div></div>
-        <div class="sr-item"><div class="sr-val" style="color:#88b2de">2</div><div class="sr-lbl">Обучение</div></div>
-        <div class="sr-item"><div class="sr-val" style="color:#c4a8f0">1</div><div class="sr-lbl">UGC</div></div>
-        <div class="sr-item"><div class="sr-val" style="color:#e8909a">1</div><div class="sr-lbl">Акция</div></div>
-        <div class="sr-item"><div class="sr-val" style="color:#d4a860">1</div><div class="sr-lbl">BTS</div></div>
-        <div class="sr-item"><div class="sr-val" style="color:#80dfa8">1</div><div class="sr-lbl">Вовлечение</div></div>
-        <div class="sr-item"><div class="sr-val" style="color:#c0c0c0">1</div><div class="sr-lbl">Новости</div></div>
-      </div>
-    </div>
-    <div class="sum-divider"></div>
-    <div class="sum-block">
-      <div class="sum-label">По форматам</div>
-      <div class="sum-row">
-        <div class="sr-item"><div class="sr-val">5</div><div class="sr-lbl">Пост</div></div>
-        <div class="sr-item"><div class="sr-val">4</div><div class="sr-lbl">Карусель</div></div>
-        <div class="sr-item"><div class="sr-val">2</div><div class="sr-lbl">Рилс/Видео</div></div>
-        <div class="sr-item"><div class="sr-val">4</div><div class="sr-lbl">Сторис</div></div>
-        <div class="sr-item"><div class="sr-val">1</div><div class="sr-lbl">Инфографика</div></div>
-      </div>
-    </div>
-    <div class="sum-divider"></div>
-    <div class="sum-block">
-      <div class="sum-label">Статус</div>
-      <div class="sum-row">
-        <div class="sr-item"><div class="sr-val" style="color:var(--s-prod-t)">1</div><div class="sr-lbl">В работе</div></div>
-        <div class="sr-item"><div class="sr-val" style="color:var(--s-ready-t)">2</div><div class="sr-lbl">ТЗ есть</div></div>
-        <div class="sr-item"><div class="sr-val" style="color:var(--s-idea-t)">10</div><div class="sr-lbl">Идея</div></div>
-      </div>
-    </div>
-  </div>
-
+<!-- WEEK TABS -->
+<div class="week-tabs" id="week-tabs">
+  <div class="week-tab active" onclick="switchWeek(0,this)">Все недели</div>
+  <div class="week-tab" onclick="switchWeek(1,this)">1–7 марта</div>
+  <div class="week-tab" onclick="switchWeek(2,this)">8–14 марта</div>
+  <div class="week-tab" onclick="switchWeek(3,this)">15–21 марта</div>
+  <div class="week-tab" onclick="switchWeek(4,this)">22–31 марта</div>
 </div>
+
+<!-- TABLE -->
+<div class="main">
+<div class="table-wrap">
+<table class="cp-table" id="cp-table">
+  <thead>
+    <tr>
+      <th style="width:40px">#</th>
+      <th style="width:82px">Дата</th>
+      <th style="width:118px">Рубрика</th>
+      <th style="min-width:220px">Тема</th>
+      <th style="width:110px">Формат</th>
+      <th style="width:130px">Платформы</th>
+      <th style="width:90px">Текст</th>
+      <th style="width:90px">Визуал</th>
+      <th style="width:80px">Кто</th>
+      <th style="width:120px">Статус</th>
+      <th style="width:60px">Время</th>
+      <th style="width:130px">Примечание</th>
+      <th style="width:52px"></th>
+    </tr>
+  </thead>
+  <tbody id="table-body">
+  </tbody>
+</table>
+</div>
+
+<!-- SUMMARY -->
+<div class="summary" id="summary"></div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ── DATA ──
+const STATUS_OPTIONS = [
+  {v:'idea', label:'Идея',          cls:'s-idea', icon:'💡'},
+  {v:'tz',   label:'ТЗ готово',     cls:'s-tz',   icon:'📋'},
+  {v:'prod', label:'В производстве',cls:'s-prod',  icon:'⚙️'},
+  {v:'done', label:'Готово',        cls:'s-done',  icon:'✅'},
+  {v:'pub',  label:'Опубликовано',  cls:'s-pub',   icon:'🚀'},
+];
+const RUBRIC_OPTIONS = [
+  {v:'life',  label:'Lifestyle',  cls:'r-life'},
+  {v:'prod',  label:'Продукт',    cls:'r-prod'},
+  {v:'promo', label:'Акция',      cls:'r-promo'},
+  {v:'ugc',   label:'UGC',        cls:'r-ugc'},
+  {v:'edu',   label:'Обучение',   cls:'r-edu'},
+  {v:'bts',   label:'BTS',        cls:'r-bts'},
+  {v:'news',  label:'Новости',    cls:'r-news'},
+  {v:'eng',   label:'Вовлечение', cls:'r-eng'},
+];
+const FORMAT_OPTIONS = [
+  {v:'post',  label:'📄 Пост',       cls:'f-post'},
+  {v:'car',   label:'🖼 Карусель',   cls:'f-car'},
+  {v:'reel',  label:'▶ Рилс',        cls:'f-reel'},
+  {v:'stor',  label:'⬜ Сторис',     cls:'f-stor'},
+  {v:'info',  label:'📊 Инфографика',cls:'f-info'},
+  {v:'vid',   label:'🎬 Видео',      cls:'f-vid'},
+];
+const WHO_OPTIONS = [
+  {v:'katya', label:'Катя', cls:'w-k'},
+  {v:'erik',  label:'Эрик', cls:'w-e'},
+  {v:'both',  label:'Оба',  cls:''},
+];
+
+const DEFAULT_ROWS = [
+  {id:1,week:1,date:'1 мар',dayName:'сб',weekend:true,title:'Диван «Монако» — цвета весны',sub:'Рендеры в 4 расцветках: роза, шалфей, карамель, молочный',rubric:'prod',format:'car',plats:{vk:true,tg:false,ig:true,pin:true},textOk:true,visOk:false,who:'both',status:'done',time:'19:00',note:'Рендер у подрядчика'},
+  {id:2,week:1,date:'3 мар',dayName:'пн',weekend:false,title:'Как выбрать диван: 5 вопросов',sub:'Карусель-инструкция перед покупкой',rubric:'edu',format:'car',plats:{vk:true,tg:true,ig:true,pin:false},textOk:true,visOk:false,who:'both',status:'tz',time:'10:00',note:'ТЗ передано'},
+  {id:3,week:1,date:'5 мар',dayName:'ср',weekend:false,title:'Воскресный вечер на диване',sub:'Атмосферный lifestyle — плед, книга, уют',rubric:'life',format:'post',plats:{vk:true,tg:true,ig:true,pin:false},textOk:true,visOk:false,who:'erik',status:'tz',time:'12:00',note:'Фото из архива'},
+  {id:4,week:1,date:'7 мар',dayName:'пт',weekend:false,title:'8 марта — скидка 15% на всё',sub:'Промо-пост с датой, условиями и промокодом',rubric:'promo',format:'post',plats:{vk:true,tg:true,ig:true,pin:false},textOk:false,visOk:false,who:'both',status:'idea',time:'09:00',note:'Промокод от Александры'},
+  {id:5,week:2,date:'9 мар',dayName:'вс',weekend:true,title:'Кровать «Берлин» — детали',sub:'Видеоролик 30 сек: макрофото обивки, ножек, швов',rubric:'prod',format:'vid',plats:{vk:true,tg:false,ig:true,pin:false},textOk:false,visOk:false,who:'erik',status:'idea',time:'14:00',note:'Нужна съёмка'},
+  {id:6,week:2,date:'10 мар',dayName:'пн',weekend:false,title:'Как рождается рендер: BTS',sub:'Сторис-серия из 6 слайдов. Катя показывает процесс',rubric:'bts',format:'stor',plats:{vk:false,tg:false,ig:true,pin:false},textOk:false,visOk:false,who:'katya',status:'idea',time:'18:00',note:'Катя снимает сама'},
+  {id:7,week:2,date:'12 мар',dayName:'ср',weekend:false,title:'Реальные фото покупателей',sub:'Карусель из 4 фото клиентов с комментариями',rubric:'ugc',format:'car',plats:{vk:true,tg:true,ig:true,pin:false},textOk:false,visOk:false,who:'both',status:'idea',time:'11:00',note:'Фото запросить у Александры'},
+  {id:8,week:2,date:'12 мар',dayName:'ср',weekend:false,title:'Какой цвет дивана выбрать?',sub:'Опрос: 4 рендера, аудитория голосует',rubric:'eng',format:'post',plats:{vk:true,tg:false,ig:true,pin:false},textOk:false,visOk:false,who:'both',status:'idea',time:'20:00',note:'Опрос ВКонтакте'},
+  {id:9,week:3,date:'15 мар',dayName:'сб',weekend:true,title:'Пуф «Стокгольм» — детали',sub:'Фокус на аксессуары. 3 варианта расцветок',rubric:'prod',format:'car',plats:{vk:false,tg:false,ig:true,pin:true},textOk:false,visOk:false,who:'both',status:'idea',time:'11:00',note:'—'},
+  {id:10,week:3,date:'17 мар',dayName:'пн',weekend:false,title:'Диван-книжка vs еврокнижка',sub:'Инфографика с объяснением механизмов',rubric:'edu',format:'info',plats:{vk:true,tg:true,ig:false,pin:false},textOk:false,visOk:false,who:'both',status:'idea',time:'10:00',note:'—'},
+  {id:11,week:3,date:'19 мар',dayName:'ср',weekend:false,title:'Весна дома — меняем текстиль',sub:'Рилс 20 сек. Трансформация интерьера с диваном',rubric:'life',format:'reel',plats:{vk:true,tg:false,ig:true,pin:false},textOk:false,visOk:false,who:'erik',status:'idea',time:'18:30',note:'Новая съёмка'},
+  {id:12,week:3,date:'21 мар',dayName:'пт',weekend:false,title:'Анонс: кое-что интересное 👀',sub:'Интригующий тизер нового поступления',rubric:'news',format:'stor',plats:{vk:false,tg:true,ig:true,pin:false},textOk:false,visOk:false,who:'both',status:'idea',time:'20:00',note:'Инфо от Александры'},
+  {id:13,week:4,date:'24 мар',dayName:'пн',weekend:false,title:'Кресло «Лион» — ценим детали',sub:'Пост с 3 фото: общий вид + 2 детальных',rubric:'prod',format:'post',plats:{vk:true,tg:false,ig:true,pin:true},textOk:false,visOk:false,who:'both',status:'idea',time:'12:00',note:'Цену уточнить'},
+  {id:14,week:4,date:'26 мар',dayName:'ср',weekend:false,title:'Ваш диван — пришлите фото',sub:'Вовлекающий пост с призывом за скидку 5%',rubric:'ugc',format:'post',plats:{vk:true,tg:true,ig:true,pin:false},textOk:false,visOk:false,who:'erik',status:'idea',time:'11:00',note:'Акцию согласовать'},
+  {id:15,week:4,date:'28 мар',dayName:'пт',weekend:false,title:'Какой наполнитель выбрать',sub:'Пружины vs пена vs комби — сравнительная карточка',rubric:'edu',format:'car',plats:{vk:true,tg:true,ig:false,pin:false},textOk:false,visOk:false,who:'both',status:'idea',time:'10:00',note:'—'},
+  {id:16,week:4,date:'29 мар',dayName:'сб',weekend:true,title:'Суббота — выспаться наконец',sub:'Атмосферное фото кровати, утро, кофе',rubric:'life',format:'post',plats:{vk:false,tg:true,ig:true,pin:true},textOk:false,visOk:false,who:'erik',status:'idea',time:'11:00',note:'—'},
+  {id:17,week:4,date:'31 мар',dayName:'пн',weekend:false,title:'Итоги марта — спасибо!',sub:'Тёплый итоговый пост. Цифры, благодарность, тизер',rubric:'news',format:'post',plats:{vk:true,tg:true,ig:true,pin:false},textOk:false,visOk:false,who:'both',status:'idea',time:'12:00',note:'Цифры из отчёта'},
+];
+
+let rows = [];
+let nextId = 100;
+let currentWeek = 0;
+
+// ── LOAD / SAVE ──
+function loadData() {
+  try {
+    const saved = localStorage.getItem('gc_content_plan_v2');
+    if (saved) { const d = JSON.parse(saved); rows = d.rows; nextId = d.nextId || 100; }
+    else { rows = JSON.parse(JSON.stringify(DEFAULT_ROWS)); }
+  } catch(e) { rows = JSON.parse(JSON.stringify(DEFAULT_ROWS)); }
+}
+function saveData() {
+  try {
+    localStorage.setItem('gc_content_plan_v2', JSON.stringify({rows, nextId}));
+    showToast('💾 Сохранено');
+  } catch(e) { showToast('❌ Ошибка сохранения'); }
+}
+function resetAll() {
+  if (!confirm('Сбросить все изменения к исходным данным?')) return;
+  rows = JSON.parse(JSON.stringify(DEFAULT_ROWS));
+  nextId = 100;
+  localStorage.removeItem('gc_content_plan_v2');
+  renderTable();
+  showToast('↺ Сброшено');
+}
+
+// ── RENDER ──
+function renderTable() {
+  const tbody = document.getElementById('table-body');
+  const fs = document.getElementById('filter-status').value;
+  const fr = document.getElementById('filter-rubric').value;
+  const fw = document.getElementById('filter-who').value;
+
+  let filtered = rows.filter(r => {
+    if (currentWeek > 0 && r.week !== currentWeek) return false;
+    if (fs && r.status !== fs) return false;
+    if (fr && r.rubric !== fr) return false;
+    if (fw === 'katya' && r.who !== 'katya' && r.who !== 'both') return false;
+    if (fw === 'erik'  && r.who !== 'erik'  && r.who !== 'both') return false;
+    return true;
+  });
+
+  document.getElementById('row-count').textContent = `Показано: ${filtered.length} из ${rows.length}`;
+
+  if (filtered.length === 0) {
+    tbody.innerHTML = `<tr class="empty-row"><td colspan="13">Нет публикаций по выбранным фильтрам</td></tr>`;
+    renderSummary([]);
+    return;
+  }
+
+  let html = '';
+  let lastWeek = 0;
+  filtered.forEach((r, i) => {
+    if (r.week !== lastWeek) {
+      lastWeek = r.week;
+      const wlabels = ['','1–7 марта','8–14 марта','15–21 марта','22–31 марта'];
+      html += `<tr class="week-row"><td colspan="13">Неделя ${r.week} &nbsp;<span>${wlabels[r.week] || ''}</span></td></tr>`;
+    }
+    const cls = i % 2 === 0 ? 'row-odd' : 'row-even';
+    html += buildRow(r, cls, i + 1);
+  });
+
+  tbody.innerHTML = html;
+  renderSummary(filtered);
+}
+
+function buildRow(r, cls, num) {
+  const st = STATUS_OPTIONS.find(x=>x.v===r.status) || STATUS_OPTIONS[0];
+  const rb = RUBRIC_OPTIONS.find(x=>x.v===r.rubric) || RUBRIC_OPTIONS[0];
+  const fm = FORMAT_OPTIONS.find(x=>x.v===r.format) || FORMAT_OPTIONS[0];
+  const who = WHO_OPTIONS.find(x=>x.v===r.who) || WHO_OPTIONS[0];
+
+  const whoHtml = r.who === 'both'
+    ? `<div style="display:flex;flex-direction:column;gap:3px"><span class="w-k">Катя</span><span class="w-e">Эрик</span></div>`
+    : r.who === 'katya' ? `<span class="w-k">Катя</span>` : `<span class="w-e">Эрик</span>`;
+
+  const plats = ['vk','tg','ig','pin'];
+  const platLabels = {vk:'ВК',tg:'TG',ig:'IG',pin:'PIN'};
+  const platCls    = {vk:'p-vk',tg:'p-tg',ig:'p-ig',pin:'p-pin'};
+  const platHtml = plats.map(p =>
+    `<span class="badge ${platCls[p]} plat-toggle ${r.plats[p] ? '' : 'off'}"
+      onclick="togglePlat(${r.id},'${p}')">${platLabels[p]}</span>`
+  ).join('');
+
+  return `<tr class="${cls}" data-id="${r.id}" data-week="${r.week}" data-status="${r.status}" data-rubric="${r.rubric}" data-who="${r.who}">
+    <td class="c-num">${num}</td>
+    <td class="c-date">
+      <div class="date-day" contenteditable="true" oninput="updateField(${r.id},'date',this.innerText)">${r.date}</div>
+      <div class="date-name ${r.weekend ? 'weekend':''}" contenteditable="true" oninput="updateField(${r.id},'dayName',this.innerText)">${r.dayName}</div>
+    </td>
+    <td class="cell-select">
+      ${buildSelect(r.id, 'rubric', RUBRIC_OPTIONS, r.rubric, 'badge')}
+    </td>
+    <td>
+      <span class="topic-title" contenteditable="true" oninput="updateField(${r.id},'title',this.innerText)">${r.title}</span>
+      <span class="topic-sub" contenteditable="true" oninput="updateField(${r.id},'sub',this.innerText)">${r.sub}</span>
+    </td>
+    <td class="cell-select">
+      ${buildSelect(r.id, 'format', FORMAT_OPTIONS, r.format, 'badge')}
+    </td>
+    <td>
+      <div class="plat-tags">${platHtml}</div>
+    </td>
+    <td>
+      <div class="asset-cell">
+        <div class="asset-row">
+          <div class="asset-check ${r.textOk ? 'checked':''}" onclick="toggleAsset(${r.id},'textOk')">${r.textOk ? '✓':''}</div>
+          <span>${r.textOk ? 'Готов' : 'Нужен'}</span>
+        </div>
+      </div>
+    </td>
+    <td>
+      <div class="asset-cell">
+        <div class="asset-row">
+          <div class="asset-check ${r.visOk ? 'checked':''}" onclick="toggleAsset(${r.id},'visOk')">${r.visOk ? '✓':''}</div>
+          <span>${r.visOk ? 'Готов' : 'Нужен'}</span>
+        </div>
+      </div>
+    </td>
+    <td>${whoHtml}</td>
+    <td class="cell-select">
+      ${buildSelect(r.id, 'status', STATUS_OPTIONS, r.status, 'badge')}
+    </td>
+    <td>
+      <input type="time" class="time-input" value="${r.time}" onchange="updateField(${r.id},'time',this.value)">
+    </td>
+    <td>
+      <span class="note-cell" contenteditable="true" oninput="updateField(${r.id},'note',this.innerText)">${r.note}</span>
+    </td>
+    <td>
+      <div class="row-actions">
+        <button class="ra-btn" onclick="duplicateRow(${r.id})" title="Дублировать">⧉</button>
+        <button class="ra-btn ra-delete" onclick="deleteRow(${r.id})" title="Удалить">✕</button>
+      </div>
+    </td>
+  </tr>`;
+}
+
+function buildSelect(rowId, field, options, currentVal, badgeType) {
+  const current = options.find(x => x.v === currentVal) || options[0];
+  const optionsHtml = options.map(o =>
+    `<div class="cs-option ${o.v === currentVal ? 'selected':''}" onclick="selectOption(${rowId},'${field}','${o.v}',this)">
+      <span class="badge ${o.cls}">${o.icon ? o.icon + ' ' : ''}${o.label}</span>
+    </div>`
+  ).join('');
+  return `<div class="custom-select" id="sel-${rowId}-${field}" onclick="toggleDropdown(event,'sel-${rowId}-${field}')">
+    <div class="cs-trigger">
+      <span class="badge ${current.cls}">${current.icon ? current.icon + ' ' : ''}${current.label}</span>
+      <span class="cs-arrow">▾</span>
+    </div>
+    <div class="cs-dropdown">${optionsHtml}</div>
+  </div>`;
+}
+
+// ── INTERACTIONS ──
+function toggleDropdown(e, id) {
+  e.stopPropagation();
+  const sel = document.getElementById(id);
+  const wasOpen = sel.classList.contains('open');
+  document.querySelectorAll('.custom-select.open').forEach(s => s.classList.remove('open'));
+  if (!wasOpen) sel.classList.add('open');
+}
+document.addEventListener('click', () => {
+  document.querySelectorAll('.custom-select.open').forEach(s => s.classList.remove('open'));
+});
+
+function selectOption(rowId, field, val, el) {
+  const row = rows.find(r => r.id === rowId);
+  if (!row) return;
+  row[field] = val;
+  document.querySelectorAll('.custom-select.open').forEach(s => s.classList.remove('open'));
+  renderTable();
+  autoSave();
+}
+
+function updateField(rowId, field, val) {
+  const row = rows.find(r => r.id === rowId);
+  if (row) { row[field] = val; autoSave(); }
+}
+
+function toggleAsset(rowId, field) {
+  const row = rows.find(r => r.id === rowId);
+  if (!row) return;
+  row[field] = !row[field];
+  renderTable();
+  autoSave();
+}
+
+function togglePlat(rowId, plat) {
+  const row = rows.find(r => r.id === rowId);
+  if (!row) return;
+  row.plats[plat] = !row.plats[plat];
+  renderTable();
+  autoSave();
+}
+
+function addRow() {
+  const newRow = {
+    id: nextId++,
+    week: currentWeek || 1,
+    date: '— мар',
+    dayName: '—',
+    weekend: false,
+    title: 'Новая публикация',
+    sub: 'Описание',
+    rubric: 'life',
+    format: 'post',
+    plats: {vk:true,tg:false,ig:true,pin:false},
+    textOk: false,
+    visOk: false,
+    who: 'both',
+    status: 'idea',
+    time: '12:00',
+    note: '—'
+  };
+  rows.push(newRow);
+  renderTable();
+  autoSave();
+  showToast('✚ Строка добавлена');
+}
+
+function deleteRow(rowId) {
+  rows = rows.filter(r => r.id !== rowId);
+  renderTable();
+  autoSave();
+  showToast('✕ Удалено');
+}
+
+function duplicateRow(rowId) {
+  const row = rows.find(r => r.id === rowId);
+  if (!row) return;
+  const copy = JSON.parse(JSON.stringify(row));
+  copy.id = nextId++;
+  copy.title = copy.title + ' (копия)';
+  const idx = rows.findIndex(r => r.id === rowId);
+  rows.splice(idx + 1, 0, copy);
+  renderTable();
+  autoSave();
+  showToast('⧉ Дублировано');
+}
+
+function switchWeek(week, el) {
+  currentWeek = week;
+  document.querySelectorAll('.week-tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  renderTable();
+}
+
+function applyFilters() { renderTable(); }
+
+// ── SUMMARY ──
+function renderSummary(filtered) {
+  const total = filtered.length;
+  const byStatus = {};
+  const byRub = {};
+  STATUS_OPTIONS.forEach(s => byStatus[s.v] = 0);
+  RUBRIC_OPTIONS.forEach(r => byRub[r.v] = 0);
+  filtered.forEach(r => { byStatus[r.status]++; byRub[r.rubric]++; });
+
+  let chips = STATUS_OPTIONS.filter(s => byStatus[s.v] > 0).map(s =>
+    `<span class="sum-chip badge ${s.cls}">${s.icon} ${byStatus[s.v]}</span>`
+  ).join('');
+  let rubs = RUBRIC_OPTIONS.filter(r => byRub[r.v] > 0).map(r =>
+    `<span class="sum-chip badge ${r.cls}">${r.label}: ${byRub[r.v]}</span>`
+  ).join('');
+
+  document.getElementById('summary').innerHTML = `
+    <div class="sum-item"><div class="sum-label">Публикаций</div><div class="sum-val">${total}</div></div>
+    <div class="sum-sep"></div>
+    <div class="sum-item"><div class="sum-label">По статусу</div><div class="sum-chips">${chips}</div></div>
+    <div class="sum-sep"></div>
+    <div class="sum-item"><div class="sum-label">По рубрикам</div><div class="sum-chips">${rubs}</div></div>`;
+}
+
+// ── TOAST ──
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2200);
+}
+
+// Autosave debounce
+let saveTimer;
+function autoSave() {
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(saveData, 1500);
+}
+
+// ── INIT ──
+loadData();
+renderTable();
+</script>
 </body>
 </html>
